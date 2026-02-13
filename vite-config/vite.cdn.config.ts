@@ -10,18 +10,14 @@ export default defineConfig({
   build: {
     outDir: 'dist/cdn',
     lib: {
-      entry: path.resolve(__dirname, '../src/umd-init.ts'),
+      entry: path.resolve(__dirname, '../src/main.tsx'),
       name: 'namingToolWidget',
       fileName: 'namingToolWidget',
-      formats: ['umd'],
+      formats: ['iife'],
     },
     rollupOptions: {
-      external: ['react', 'react-dom'],
       output: {
-        globals: {
-          react: 'React',
-          'react-dom': 'ReactDOM',
-        },
+        inlineDynamicImports: true,
       },
     },
   },

@@ -11,7 +11,9 @@
     "build:cdn": "vite build --config vite-config/vite.cdn.config.ts",
     "build:standalone": "vite build --config vite-config/vite.standalone.config.ts",
     "build:demo": "vite build --config vite-config/vite.demo.config.ts",
-    "build:all": "npm run build:cdn && npm run build:standalone && npm run build:demo"
+    "build:all": "npm run build:cdn & npm run build:standalone & npm run build:demo & wait",
+    "preview:cdn": "serve . -p 3000",
+    "clean": "rm -rf dist"
   },
   "dependencies": {
     "react": "^19.2.0",
