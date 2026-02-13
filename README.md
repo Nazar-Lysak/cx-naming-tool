@@ -155,3 +155,8 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
 ```
+
+
+CDN: https://nazar-lysak.github.io/cx-naming-tool/cdn/namingToolWidget.iife.js
+Standalone: https://nazar-lysak.github.io/cx-naming-tool/standalone/
+Demo: https://nazar-lysak.github.io/cx-naming-tool/demo/

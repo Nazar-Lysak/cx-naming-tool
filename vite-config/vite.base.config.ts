@@ -5,7 +5,8 @@ import path from 'node:path';
 export const basePlugins = [react()];
 
 // Спільні налаштування для SPA білдів (standalone/demo)
-export const getSpaConfig = (outDir: string) => defineConfig({
+export const getSpaConfig = (outDir: string, basePath = '/') => defineConfig({
+  base: basePath,
   plugins: basePlugins,
   build: {
     outDir,
