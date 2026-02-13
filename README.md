@@ -61,3 +61,97 @@ npx serve dist/demo      # Запустити демо
 - **IIFE формат** для CDN (всі залежності включені)
 - **Єдиний вихідний файл** (`main.tsx`) для всіх білдів
 - **Паралельні білди** для швидшої CI/CD
+
+## 🌐 Деплой
+
+### Структура після білду
+
+```
+dist/
+├── cdn/
+│   ├── namingToolWidget.iife.js
+│   └── namingToolWidget.css
+├── standalone/
+│   ├── index.html
+│   ├── index.js
+│   └── index.css
+└── demo/
+    ├── index.html
+    ├── index.js
+    └── index.css
+```
+
+### Варіанти деплою
+
+#### 1. **Netlify / Vercel**
+
+```bash
+# 1. Зберіть всі версії
+npm run build:all
+
+# 2. Задеплойте dist папку
+# Netlify/Vercel автоматично виявлять структуру
+```
+
+**Netlify**: `netlify deploy --prod --dir=dist`  
+**Vercel**: `vercel --prod dist`
+
+#### 2. **GitHub Pages**
+
+Додайте до `package.json`:
+
+```json
+"scripts": {
+  "deploy": "npm run build:all && gh-pages -d dist"
+}
+```
+
+```bash
+npm install -D gh-pages
+npm run deploy
+```
+
+#### 3. **Власний сервер**
+
+```bash
+# Зберіть і завантажте dist папку на сервер
+npm run build:all
+scp -r dist/* user@server:/var/www/html/
+```
+
+### Використання після деплою
+
+Якщо задеплоєно на `https://your-domain.com`:
+
+**CDN версія:**
+```html
+<link rel="stylesheet" href="https://your-domain.com/cdn/namingToolWidget.css">
+<div id="naming-tool-widget"></div>
+<script src="https://your-domain.com/cdn/namingToolWidget.iife.js"></script>
+```
+
+**Standalone:** `https://your-domain.com/standalone/`  
+**Demo:** `https://your-domain.com/demo/`
+
+### Автоматизація CI/CD
+
+**.github/workflows/deploy.yml**:
+
+```yaml
+name: Deploy
+on:
+  push:
+    branches: [main]
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+      - run: npm ci
+      - run: npm run build:all
+      - uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+```
