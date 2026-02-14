@@ -127,11 +127,8 @@ scp -r dist/* user@server:/var/www/html/
 ```html
 <link rel="stylesheet" href="https://your-domain.com/cdn/namingToolWidget.css">
 <div id="naming-tool-widget"></div>
-<script src="https://your-domain.com/cdn/namingToolWidget.iife.js"></script>
+<script src="https://nazar-lysak.github.io/cx-naming-tool/cdn/namingToolWidget.iife.js"></script>
 ```
-
-**Standalone:** `https://your-domain.com/standalone/`  
-**Demo:** `https://your-domain.com/demo/`
 
 ### Автоматизація CI/CD
 
