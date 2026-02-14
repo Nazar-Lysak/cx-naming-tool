@@ -64,16 +64,6 @@ npx serve dist/demo      # Запустити демо
 
 Віджет автоматично рендериться у контейнер з `id="naming-tool-widget"` або `id="root"`.
 
-## ⚙️ Технічні деталі
-
-- **React 19** + **TypeScript**
-- **Vite 7** для збірки
-- **IIFE формат** для CDN (всі залежності включені)
-- **Єдиний вихідний файл** (`main.tsx`) для всіх білдів
-- **Паралельні білди** для швидшої CI/CD
-
-## 🌐 Деплой
-
 ### Структура після білду
 
 ```
@@ -99,28 +89,7 @@ dist/
 # 1. Зберіть всі версії
 npm run build:all
 
-# 2. Задеплойте dist папку
-# Netlify/Vercel автоматично виявлять структуру
 ```
-
-**Netlify**: `netlify deploy --prod --dir=dist`  
-**Vercel**: `vercel --prod dist`
-
-#### 2. **GitHub Pages**
-
-Додайте до `package.json`:
-
-```json
-"scripts": {
-  "deploy": "npm run build:all && gh-pages -d dist"
-}
-```
-
-```bash
-npm install -D gh-pages
-npm run deploy
-```
-
 
 CDN: https://nazar-lysak.github.io/cx-naming-tool/cdn/namingToolWidget.iife.js
 Standalone: https://nazar-lysak.github.io/cx-naming-tool/standalone/

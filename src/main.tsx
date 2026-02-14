@@ -7,7 +7,7 @@ import App from './App.tsx'
 export default App;
 
 // Автоматично рендеримо для SPA (standalone/demo)
-const rootElement = document.getElementById('root') || document.getElementById('naming-tool-widget');
+const rootElement = document.getElementById('cx-naming-tool-widget');
 if (rootElement) {
   createRoot(rootElement).render(
     <StrictMode>
