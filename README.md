@@ -41,13 +41,23 @@ npx serve dist/demo      # Запустити демо
 
 ```html
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Naming Tool Widget - Standalone</title>
     <link rel="stylesheet" href="dist/cdn/namingToolWidget.css">
   </head>
   <body>
     <div id="naming-tool-widget"></div>
-    <script src="dist/cdn/namingToolWidget.iife.js"></script>
+
+    <script 
+        src="dist/cdn/namingToolWidget.iife.js"
+        type="text/javascript" 
+        data-domain-script="01951312-f7ae-74cf-bb0c-c2442167448c"
+        data-language="en-gb"  
+        defer
+    ></script>
   </body>
 </html>
 ```
@@ -109,48 +119,6 @@ npm run build:all
 ```bash
 npm install -D gh-pages
 npm run deploy
-```
-
-#### 3. **Власний сервер**
-
-```bash
-# Зберіть і завантажте dist папку на сервер
-npm run build:all
-scp -r dist/* user@server:/var/www/html/
-```
-
-### Використання після деплою
-
-Якщо задеплоєно на `https://your-domain.com`:
-
-**CDN версія:**
-```html
-<link rel="stylesheet" href="https://your-domain.com/cdn/namingToolWidget.css">
-<div id="naming-tool-widget"></div>
-<script src="https://nazar-lysak.github.io/cx-naming-tool/cdn/namingToolWidget.iife.js"></script>
-```
-
-### Автоматизація CI/CD
-
-**.github/workflows/deploy.yml**:
-
-```yaml
-name: Deploy
-on:
-  push:
-    branches: [main]
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-      - run: npm ci
-      - run: npm run build:all
-      - uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
 ```
 
 
