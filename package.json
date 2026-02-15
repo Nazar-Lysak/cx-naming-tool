@@ -1,5 +1,9 @@
 {
   "name": "naming-tool-widget",
+  "cdn-link": "https://nazar-lysak.github.io/cx-naming-tool/cdn/namingToolWidget.iife.js",
+  "cdn-use-demo": "https://nazar-lysak.github.io/cx-naming-tool-cdn/index.html",
+  "standalone-link": "https://nazar-lysak.github.io/cx-naming-tool/standalone/",
+  "demo-link": "https://nazar-lysak.github.io/cx-naming-tool/demo/index.html",
   "private": true,
   "version": "0.0.0",
   "type": "module",

@@ -90,7 +90,3 @@ dist/
 npm run build:all
 
 ```
-
-CDN: https://nazar-lysak.github.io/cx-naming-tool/cdn/namingToolWidget.iife.js
-Standalone: https://nazar-lysak.github.io/cx-naming-tool/standalone/
-Demo: https://nazar-lysak.github.io/cx-naming-tool/demo/
