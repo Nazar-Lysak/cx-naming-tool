@@ -19,11 +19,27 @@ if (!rootElement) {
 }
 
 const scriptElement = document.currentScript as HTMLScriptElement;
-const config: WidgetConfig = scriptElement ? {...scriptElement} : {...rootElement.dataset};
+
+function getAllScriptDataAttrs(script: HTMLScriptElement) {
+  const attrs: Record<string, string> = {};
+  Array.from(script.attributes).forEach(attr => {
+    if (attr.name.startsWith('data-')) {
+      const key = attr.name.replace('data-', '').replace(/-([a-z])/g, (_, c) => c.toUpperCase());
+      attrs[key] = attr.value;
+    }
+  });
+  return attrs;
+}
+
+const config = scriptElement 
+  ? getAllScriptDataAttrs(scriptElement)
+  : { ...rootElement.dataset };
+
+if (!config.id) {
+  console.warn('CX Naming Tool: No "id" provided in data attributes');
+}
 
 console.log('Widget configuration:', config);
-
-
 
 createRoot(rootElement).render(
   <StrictMode>
