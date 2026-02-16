@@ -31,7 +31,8 @@ const cdnConfig: WidgetConfig = {
 // Standalone version: read from div data-attributes
 const standaloneConfig: WidgetConfig = {
   id: dataAttributes.domainScript || dataAttributes.id,
-  lang: dataAttributes.language || dataAttributes.lang
+  lang: dataAttributes.language || dataAttributes.lang,
+  widget: dataAttributes.widget
 };
 
 const isCDN = !!(cdnConfig.id || cdnConfig.lang);
