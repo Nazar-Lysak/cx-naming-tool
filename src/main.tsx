@@ -19,27 +19,11 @@ if (!rootElement) {
 }
 
 const scriptElement = document.currentScript as HTMLScriptElement;
-const dataAttributes = rootElement.dataset;
+const config: WidgetConfig = scriptElement ? {...scriptElement} : {...rootElement.dataset};
 
-// CDN version: read from script tag
-const cdnConfig: WidgetConfig = {
-  id: scriptElement?.getAttribute('data-domain-script'),
-  lang: scriptElement?.getAttribute('data-language'),
-  widget: scriptElement?.getAttribute('widget')
-};
+console.log('Widget configuration:', config);
 
-// Standalone version: read from div data-attributes
-const standaloneConfig: WidgetConfig = {
-  id: dataAttributes.domainScript || dataAttributes.id,
-  lang: dataAttributes.language || dataAttributes.lang,
-  widget: dataAttributes.widget
-};
 
-const isCDN = !!(cdnConfig.id || cdnConfig.lang);
-const config = isCDN ? cdnConfig : standaloneConfig;
-
-console.log('Mode:', isCDN ? 'CDN version' : 'Standalone version');
-console.log('Config:', config);
 
 createRoot(rootElement).render(
   <StrictMode>
