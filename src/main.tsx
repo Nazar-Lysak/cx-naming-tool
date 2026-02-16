@@ -6,6 +6,7 @@ import App from './App.tsx'
 export interface WidgetConfig {
   id?: string | null;
   lang?: string | null;
+  widget?: string | null;
 }
 
 export default App;
@@ -23,7 +24,8 @@ const dataAttributes = rootElement.dataset;
 // CDN version: read from script tag
 const cdnConfig: WidgetConfig = {
   id: scriptElement?.getAttribute('data-domain-script'),
-  lang: scriptElement?.getAttribute('data-language')
+  lang: scriptElement?.getAttribute('data-language'),
+  widget: scriptElement?.getAttribute('widget')
 };
 
 // Standalone version: read from div data-attributes
