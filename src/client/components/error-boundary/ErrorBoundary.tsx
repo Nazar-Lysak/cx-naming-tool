@@ -87,10 +87,10 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
       return (
         <ErrorContainer>
           <ErrorTitle>{textData.errorScreen.title}</ErrorTitle>
-          <ErrorMessage>
-            {textData.errorScreen.description}
-          </ErrorMessage>
-          <RetryButton onClick={this.handleRetry}>{textData.errorScreen.retryButton}</RetryButton>
+          <ErrorMessage>{textData.errorScreen.description}</ErrorMessage>
+          <RetryButton onClick={this.handleRetry}>
+            {textData.errorScreen.retryButton}
+          </RetryButton>
         </ErrorContainer>
       );
     }

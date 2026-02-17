@@ -20,16 +20,10 @@ const StyledButton = styled.button`
 type ButtonProps = {
   title: string;
   handleClick: () => void;
-}
+};
 
 const Button = ({ title, handleClick }: ButtonProps) => {
-  return (
-    <StyledButton 
-      onClick={handleClick}
-    >
-      {title}
-    </StyledButton>
-  )
-}
+  return <StyledButton onClick={handleClick}>{title}</StyledButton>;
+};
 
 export default Button;

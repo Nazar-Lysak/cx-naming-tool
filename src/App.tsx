@@ -1,23 +1,23 @@
-import { useState, lazy, Suspense } from 'react'
+import { useState, lazy, Suspense } from 'react';
 import styled from 'styled-components';
-import type { WidgetConfig } from './main'
-import StartScreen from '@/client/components/start-screen/StartScreen'
+import type { WidgetConfig } from './main';
+import StartScreen from '@/client/components/start-screen/StartScreen';
 import LoadingOverlay from '@/client/UI/loading-overlay/LoadingOverlay';
 
-const MainApp = lazy(() => import('@/client/MainApp'))
+const MainApp = lazy(() => import('@/client/MainApp'));
 
 const AppContainer = styled.div`
   position: relative;
   width: 100%;
   min-height: 200px;
-`
+`;
 
 function App({ config }: { config: WidgetConfig }) {
-  const [isStarted, setIsStarted] = useState<boolean>(false)
+  const [isStarted, setIsStarted] = useState<boolean>(false);
 
   const handleStart = () => {
-    setIsStarted(true)
-  }
+    setIsStarted(true);
+  };
 
   return (
     <AppContainer className="cx-naming-tool">
@@ -28,7 +28,7 @@ function App({ config }: { config: WidgetConfig }) {
         </Suspense>
       )}
     </AppContainer>
-  )
+  );
 }
 
-export default App
+export default App;

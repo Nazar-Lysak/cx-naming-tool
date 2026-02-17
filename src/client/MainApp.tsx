@@ -1,8 +1,7 @@
 import type { WidgetConfig } from '../main';
 
 function MainApp(config: WidgetConfig) {
-
-  console.log(config)
+  console.log(config);
 
   return (
     <div className="main-app">

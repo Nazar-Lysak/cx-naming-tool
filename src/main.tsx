@@ -1,7 +1,7 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import App from './App.tsx'
-import ErrorBoundary from '@/client/components/error-boundary/ErrorBoundary'
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import App from './App.tsx';
+import ErrorBoundary from '@/client/components/error-boundary/ErrorBoundary';
 
 export interface WidgetConfig {
   id?: string | null;
@@ -22,16 +22,18 @@ const scriptElement = document.currentScript as HTMLScriptElement;
 
 function getAllScriptDataAttrs(script: HTMLScriptElement) {
   const attrs: Record<string, string> = {};
-  Array.from(script.attributes).forEach(attr => {
+  Array.from(script.attributes).forEach((attr) => {
     if (attr.name.startsWith('data-')) {
-      const key = attr.name.replace('data-', '').replace(/-([a-z])/g, (_, c) => c.toUpperCase());
+      const key = attr.name
+        .replace('data-', '')
+        .replace(/-([a-z])/g, (_, c) => c.toUpperCase());
       attrs[key] = attr.value;
     }
   });
   return attrs;
 }
 
-const config = scriptElement 
+const config = scriptElement
   ? getAllScriptDataAttrs(scriptElement)
   : { ...rootElement.dataset };
 

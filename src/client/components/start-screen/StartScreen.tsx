@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import parse from 'html-react-parser'
+import parse from 'html-react-parser';
 import { motion } from 'motion/react';
 import Button from '@/client/UI/button/Button';
 import { textData } from '@/data/text';
@@ -51,7 +51,7 @@ function StartScreen({ onStart }: StartScreenProps) {
         <Title
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+          transition={{ duration: 0.8, delay: 0.3, ease: 'easeOut' }}
         >
           {parse(textData.startScreen.title)}
         </Title>
