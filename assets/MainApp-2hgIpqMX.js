@@ -1,0 +1,1 @@
+import{j as e}from"./index-Bm0NrQ-N.js";function i(a){return console.log(a),e.jsx("div",{className:"main-app",children:e.jsx("div",{className:"main-app__header",children:e.jsx("h1",{children:"Find the perfect name"})})})}export{i as default};
