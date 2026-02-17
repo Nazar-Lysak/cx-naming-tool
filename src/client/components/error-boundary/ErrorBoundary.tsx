@@ -11,6 +11,7 @@ const ErrorContainer = styled.div`
   min-height: 400px;
   padding: 32px;
   background-color: ${generalStyles.colors.light};
+  font-family: ${generalStyles.fonts.primary};
   border-radius: 16px;
   text-align: center;
 `;
