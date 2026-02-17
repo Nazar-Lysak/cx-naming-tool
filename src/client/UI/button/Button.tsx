@@ -25,9 +25,9 @@ type ButtonProps = {
 const Button = ({ title, handleClick }: ButtonProps) => {
   return (
     <StyledButton 
-        onClick={handleClick}
+      onClick={handleClick}
     >
-        {title}
+      {title}
     </StyledButton>
   )
 }

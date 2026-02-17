@@ -1,0 +1,9 @@
+export const textData = {
+    buttonStart: 'Start',
+
+    startScreen: {
+        title: "Find the Pawfect Name",
+        description: "Found the perfect breed? Now you need a name! Try our new Dog Name Generator; from the UK's most popular ones, names for small dogs, big dogs, or something unusual - we've got the one for you!", 
+
+    }
+}

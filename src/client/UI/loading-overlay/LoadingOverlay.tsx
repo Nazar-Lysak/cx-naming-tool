@@ -12,7 +12,7 @@ const Overlay = styled(motion.div)`
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 9999;
+  z-index: 99999;
 `;
 
 const LoadingOverlay: React.FC = () => {
@@ -20,6 +20,7 @@ const LoadingOverlay: React.FC = () => {
     <Overlay
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
       exit={{ opacity: 0 }}
     >   
       <img src={viteLogo} alt="Loading..." />

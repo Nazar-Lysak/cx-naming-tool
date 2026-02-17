@@ -1,11 +1,14 @@
 import styled from 'styled-components';
+import parse from 'html-react-parser'
+import { motion } from 'motion/react';
 import Button from '../../UI/button/Button';
+import {textData} from '../../../data/text';
 
 interface StartScreenProps {
   onStart: () => void;
 }
 
-const Container = styled.div`
+const Container = styled(motion.div)`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -15,12 +18,12 @@ const Container = styled.div`
   border-radius: 16px;
 `;
 
-const Content = styled.div`
+const Content = styled(motion.div)`
   text-align: center;
   max-width: 500px;
 `;
 
-const Title = styled.h2`
+const Title = styled(motion.h2)`
   font-size: 2rem;
   font-weight: 600;
   color: #2b2b2b;
@@ -28,22 +31,42 @@ const Title = styled.h2`
   line-height: 1.2;
 `;
 
-const Description = styled.p`
+const Description = styled(motion.p)`
   font-size: 1rem;
   color: #2b2b2b;
   margin: 0 0 32px 0;
   line-height: 1.5;
 `;
 
+const ButtonWrapper = styled(motion.div)`
+  display: inline-block;
+`;
+
 function StartScreen({ onStart }: StartScreenProps) {
   return (
     <Container>
       <Content>
-        <Title>Find the Pawfect Name</Title>
-        <Description>
-          Found the perfect breed? Now you need a name! Try our new Dog Name Generator; from the UK's most popular ones, names for small dogs, big dogs, or something unusual - we've got the one for you!
+        <Title
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+        >
+          {parse(textData.startScreen.title)}
+        </Title>
+        <Description
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.8 }}
+        >
+          {parse(textData.startScreen.description)}
         </Description>
-        <Button title="Start" handleClick={onStart} />
+        <ButtonWrapper
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 1.0 }}
+        >
+          <Button title={textData.buttonStart} handleClick={onStart} />
+        </ButtonWrapper>
       </Content>
     </Container>
   );
