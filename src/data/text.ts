@@ -1,5 +1,7 @@
 export const textData = {
-    buttonStart: 'Start',
+    buttons: {
+        start: "Start",
+    },
 
     startScreen: {
         title: "Find the Pawfect Name",

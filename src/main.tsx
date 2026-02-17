@@ -1,6 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import App from './App.tsx'
+import ErrorBoundary from './client/components/error-boundary/ErrorBoundary'
 
 export interface WidgetConfig {
   id?: string | null;
@@ -41,6 +42,8 @@ if (!config.id) {
 
 createRoot(rootElement).render(
   <StrictMode>
-    <App config={config} />
+    <ErrorBoundary>
+      <App config={config} />
+    </ErrorBoundary>
   </StrictMode>
 );
