@@ -1,10 +1,10 @@
 import { useState, lazy, Suspense } from 'react'
 import styled from 'styled-components';
 import type { WidgetConfig } from './main'
-import StartScreen from './client/components/start-screen/StartScreen'
-import LoadingOverlay from './client/UI/loading-overlay/LoadingOverlay';
+import StartScreen from '@/client/components/start-screen/StartScreen'
+import LoadingOverlay from '@/client/UI/loading-overlay/LoadingOverlay';
 
-const MainApp = lazy(() => import('./client/MainApp'))
+const MainApp = lazy(() => import('@/client/MainApp'))
 
 const AppContainer = styled.div`
   position: relative;

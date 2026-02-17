@@ -1,7 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import App from './App.tsx'
-import ErrorBoundary from './client/components/error-boundary/ErrorBoundary'
+import ErrorBoundary from '@/client/components/error-boundary/ErrorBoundary'
 
 export interface WidgetConfig {
   id?: string | null;

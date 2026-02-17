@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 import parse from 'html-react-parser'
 import { motion } from 'motion/react';
-import Button from '../../UI/button/Button';
-import { textData } from '../../../data/text';
-import { generalStyles } from '../../../styles/variables';
+import Button from '@/client/UI/button/Button';
+import { textData } from '@/data/text';
+import { generalStyles } from '@/styles/variables';
 
 interface StartScreenProps {
   onStart: () => void;

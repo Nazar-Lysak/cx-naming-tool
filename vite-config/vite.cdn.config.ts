@@ -1,9 +1,10 @@
 import { defineConfig } from 'vite';
 import path from 'node:path';
-import { basePlugins } from './vite.base.config.js';
+import { basePlugins, baseResolve } from './vite.base.config.js';
 
 export default defineConfig({
   plugins: basePlugins,
+  resolve: baseResolve,
   define: {
     'process.env.NODE_ENV': JSON.stringify('production'),
   },
