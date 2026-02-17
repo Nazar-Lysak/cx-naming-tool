@@ -2,6 +2,8 @@ import type { WidgetConfig } from '../main';
 
 function MainApp(config: WidgetConfig) {
 
+  console.log(config)
+
   return (
     <div className="main-app">
       <div className="main-app__header">
