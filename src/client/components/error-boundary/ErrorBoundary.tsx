@@ -1,6 +1,7 @@
 import React, { Component, type ReactNode } from 'react';
 import styled from 'styled-components';
 import { generalStyles } from '../../../styles/variables';
+import { textData } from '../../../data/text';
 
 const ErrorContainer = styled.div`
   display: flex;
@@ -84,11 +85,11 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
     if (this.state.hasError) {
       return (
         <ErrorContainer>
-          <ErrorTitle>Oops! Something went wrong</ErrorTitle>
+          <ErrorTitle>{textData.errorScreen.title}</ErrorTitle>
           <ErrorMessage>
-            We're sorry, but something unexpected happened. Please try again.
+            {textData.errorScreen.description}
           </ErrorMessage>
-          <RetryButton onClick={this.handleRetry}>Try Again</RetryButton>
+          <RetryButton onClick={this.handleRetry}>{textData.errorScreen.retryButton}</RetryButton>
         </ErrorContainer>
       );
     }
