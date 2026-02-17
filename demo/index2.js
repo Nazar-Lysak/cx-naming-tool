@@ -1,0 +1,1 @@
+import{j as e}from"./index.js";function n(a){return e.jsx("div",{className:"main-app",children:e.jsx("div",{className:"main-app__header",children:e.jsx("h1",{children:"Find the perfect name"})})})}export{n as default};
