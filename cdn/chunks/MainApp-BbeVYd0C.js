@@ -1,0 +1,1 @@
+import{j as e}from"./vendor-react-C2GjpP9I.js";import"./vendor-DNyN8xRk.js";function r(a){return console.log(a),e.jsx("div",{className:"main-app",children:e.jsx("div",{className:"main-app__header",children:e.jsx("h1",{children:"Find the perfect name"})})})}export{r as default};
