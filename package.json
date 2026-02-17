@@ -21,8 +21,10 @@
     "deploy": "npm run build:all && gh-pages -d dist"
   },
   "dependencies": {
+    "motion": "^12.34.1",
     "react": "^19.2.0",
-    "react-dom": "^19.2.0"
+    "react-dom": "^19.2.0",
+    "styled-components": "^6.3.9"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",

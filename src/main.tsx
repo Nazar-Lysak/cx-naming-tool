@@ -1,6 +1,5 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import './index.css'
 import App from './App.tsx'
 
 export interface WidgetConfig {
@@ -37,12 +36,11 @@ const config = scriptElement
 
 if (!config.id) {
   console.warn('CX Naming Tool: No "id" provided in data attributes');
+  throw new Error('Widget ID is required');
 }
-
-console.log('Widget configuration:', config);
 
 createRoot(rootElement).render(
   <StrictMode>
-    <App />
+    <App config={config} />
   </StrictMode>
 );

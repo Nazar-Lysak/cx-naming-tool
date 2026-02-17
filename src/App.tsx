@@ -1,34 +1,33 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import './App.css'
+import { useState, lazy, Suspense } from 'react'
+import styled from 'styled-components';
+import type { WidgetConfig } from './main'
+import StartScreen from './client/components/start-screen/StartScreen'
+import LoadingOverlay from './client/UI/loading-overlay/LoadingOverlay';
 
-function App() {
-  const [count, setCount] = useState(0)
+const MainApp = lazy(() => import('./client/MainApp'))
+
+const AppContainer = styled.div`
+  position: relative;
+  width: 100%;
+  min-height: 200px;
+`
+
+function App({ config }: { config: WidgetConfig }) {
+  const [isStarted, setIsStarted] = useState<boolean>(false)
+
+  const handleStart = () => {
+    setIsStarted(true)
+  }
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <AppContainer className="cx-naming-tool">
+      {!isStarted && <StartScreen onStart={handleStart} />}
+      {isStarted && (
+        <Suspense fallback={<LoadingOverlay />}>
+          <MainApp {...config} />
+        </Suspense>
+      )}
+    </AppContainer>
   )
 }
 
