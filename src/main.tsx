@@ -40,7 +40,6 @@ const config = scriptElement
 
 if (!config.id) {
   console.warn('CX Naming Tool: No "id" provided in data attributes');
-  throw new Error('Widget ID is required');
 }
 
 createRoot(rootElement).render(
