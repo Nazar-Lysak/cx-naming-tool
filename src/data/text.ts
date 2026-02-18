@@ -21,4 +21,11 @@ export const textData = {
     categorySingularLabel: 'Category',
     categoryUnknownLabel: 'Unknown',
   },
+
+  genderFilters: {
+    label: 'Gender',
+    male: 'Male',
+    female: 'Female',
+    any: 'Any',
+  },
 };

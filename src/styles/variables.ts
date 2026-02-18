@@ -2,6 +2,7 @@ export const deviceSizes = {
   mobileS: 568,
   mobile: 768,
   tablet: 1024,
+  containerWidth: 1200,
 };
 
 export const generalStyles = {

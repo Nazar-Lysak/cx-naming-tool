@@ -4,12 +4,13 @@ import type { WidgetConfig } from './main';
 import StartScreen from '@/client/components/start-screen/StartScreen';
 import LoadingOverlay from '@/client/UI/loading-overlay/LoadingOverlay';
 import { useApp } from '@/client/context/context';
+import { deviceSizes } from './styles/variables';
 
 const MainApp = lazy(() => import('@/client/MainApp'));
 
 const AppContainer = styled.div`
   position: relative;
-  max-width: 1200px;
+  max-width: ${deviceSizes.containerWidth}px;
   margin: 0 auto;
   padding: 16px;
   min-height: 200px;
