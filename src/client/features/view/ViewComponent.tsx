@@ -104,6 +104,8 @@ const ViewComponent = () => {
       : -1;
   const activeName =
     activeNameIndex >= 0 ? memoizedNames[activeNameIndex] : null;
+  const activePositionInRow =
+    activeNameIndex >= 0 ? activeNameIndex % popoverInterval : 0;
 
   return (
     <Container>
@@ -116,7 +118,11 @@ const ViewComponent = () => {
             {name.title}
           </NameCard>
           {index === popoverPosition && activeName && (
-            <NamePopover name={activeName} />
+            <NamePopover
+              name={activeName}
+              activeColumnIndex={activePositionInRow}
+              totalColumns={popoverInterval}
+            />
           )}
         </Fragment>
       ))}
