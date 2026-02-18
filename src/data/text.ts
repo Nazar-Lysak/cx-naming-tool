@@ -15,4 +15,8 @@ export const textData = {
       "We're sorry, but something unexpected happened. Please try again.",
     retryButton: 'Try Again',
   },
+
+  nameDetails: {
+    categoryLabel: 'Category',
+  },
 };

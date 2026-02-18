@@ -10,8 +10,10 @@ export const generalStyles = {
     black: '#000000',
     red: '#e91c24',
     darkGray: '#2b2b2b',
+    gray: '#6b6868',
     lightGray: '#f8f9fa',
     light: '#fff5f5',
+    beige: '#c9c5b9',
   },
   fonts: {
     primary: 'Helvetica, sans-serif',

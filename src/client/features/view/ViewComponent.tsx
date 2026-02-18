@@ -28,7 +28,6 @@ const NameCard = styled.button`
   background-color: ${generalStyles.colors.lightGray};
   font-family: ${generalStyles.fonts.primary};
   color: ${generalStyles.colors.darkGray};
-  width: 100%;
   font-size: 20px;
   box-shadow:
     rgba(58, 53, 51, 0.1) 0px 2px 12px 0px,

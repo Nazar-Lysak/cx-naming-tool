@@ -9,7 +9,9 @@ const MainApp = lazy(() => import('@/client/MainApp'));
 
 const AppContainer = styled.div`
   position: relative;
-  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
   min-height: 200px;
 
   * {
