@@ -1,8 +1,8 @@
 import NamePopover from '@/client/components/name-popover/NamePopover';
 import { useApp } from '@/client/context/context';
 import { nameList } from '@/data/nameList';
-import { generalStyles } from '@/styles/variables';
-import { useMemo } from 'react';
+import { deviceSizes, generalStyles } from '@/styles/variables';
+import { Fragment, useEffect, useMemo, useState } from 'react';
 import styled from 'styled-components';
 
 const Container = styled.div`
@@ -55,10 +55,38 @@ const NameCard = styled.button`
 
 const ViewComponent = () => {
   const { nameId, setNameId } = useApp();
+  const [popoverInterval, setPopoverInterval] = useState<number>(5);
 
   const memoizedNames = useMemo(() => {
-    console.log('Memoized value');
+    console.log('Memoized names recalculated');
     return nameList;
+  }, []);
+
+  useEffect(() => {
+    const updateInterval = () => {
+      const width = window.innerWidth;
+      let interval: number;
+
+      switch (true) {
+        case width <= deviceSizes.mobileS:
+          interval = 1;
+          break;
+        case width <= deviceSizes.mobile:
+          interval = 2;
+          break;
+        case width <= deviceSizes.tablet:
+          interval = 3;
+          break;
+        default:
+          interval = 4;
+      }
+
+      setPopoverInterval(interval);
+    };
+
+    updateInterval();
+    window.addEventListener('resize', updateInterval);
+    return () => window.removeEventListener('resize', updateInterval);
   }, []);
 
   const handleNameClick = (id: string): void => {
@@ -69,18 +97,28 @@ const ViewComponent = () => {
     return id === nameId ? 'nt-active' : '';
   };
 
+  const activeNameIndex = memoizedNames.findIndex((name) => name.id === nameId);
+  const popoverPosition =
+    activeNameIndex >= 0
+      ? Math.ceil((activeNameIndex + 1) / popoverInterval) * popoverInterval - 1
+      : -1;
+  const activeName =
+    activeNameIndex >= 0 ? memoizedNames[activeNameIndex] : null;
+
   return (
     <Container>
-      {memoizedNames.map((name) => (
-        <div key={name.id}>
+      {memoizedNames.map((name, index) => (
+        <Fragment key={name.id}>
           <NameCard
             className={handleActiveClass(name.id)}
             onClick={() => handleNameClick(name.id)}
           >
             {name.title}
           </NameCard>
-          {name.id === nameId && <NamePopover name={name} />}
-        </div>
+          {index === popoverPosition && activeName && (
+            <NamePopover name={activeName} />
+          )}
+        </Fragment>
       ))}
     </Container>
   );

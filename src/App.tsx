@@ -11,6 +11,10 @@ const AppContainer = styled.div`
   position: relative;
   width: 100%;
   min-height: 200px;
+
+  * {
+    box-sizing: border-box;
+  }
 `;
 
 function App({ config }: { config: WidgetConfig }) {

@@ -1,3 +1,9 @@
+export const deviceSizes = {
+  mobileS: 568,
+  mobile: 768,
+  tablet: 1024,
+};
+
 export const generalStyles = {
   colors: {
     white: '#ffffff',
@@ -12,9 +18,8 @@ export const generalStyles = {
     secondary: 'Arial, sans-serif',
   },
   mediaQuery: {
-    mobileS: '(max-width: 568px)',
-    mobile: '(max-width: 768px)',
-    tablet: '(max-width: 1024px)',
-    desktop: '(min-width: 1025px)',
+    mobileS: `(max-width: ${deviceSizes.mobileS}px)`,
+    mobile: `(max-width: ${deviceSizes.mobile}px)`,
+    tablet: `(max-width: ${deviceSizes.tablet}px)`,
   },
 };
