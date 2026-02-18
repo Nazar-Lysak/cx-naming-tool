@@ -1,4 +1,4 @@
-import type { PetName } from '@/client/types/types';
+import type { PetName, PetNameCategoryRef } from '@/client/types/types';
 import { generalStyles } from '@/styles/variables';
 import { motion } from 'motion/react';
 import parse from 'html-react-parser';
@@ -7,6 +7,7 @@ import CloseIcon from '@/assets/icons/CloseIcon';
 import { useApp } from '@/client/context/context';
 import { textData } from '@/data/text';
 import ShareButtons from '../share-buttons/ShareButtons';
+import { categoryList } from '@/data/categoryList';
 
 interface NamePopoverProps {
   name: PetName;
@@ -80,10 +81,10 @@ const Definition = styled.div`
   color: ${generalStyles.colors.gray};
 
   a {
-  text-decoration: none;
-  color: inherit;
-  font-weight: 500;
-  border-bottom: 1px solid transparent;
+    text-decoration: none;
+    color: inherit;
+    font-weight: 500;
+    border-bottom: 1px solid transparent;
     border-bottom: 1.2px solid ${generalStyles.colors.red};
   }
 `;
@@ -96,7 +97,22 @@ const NamePopover = ({
   const { setNameId } = useApp();
   const arrowPosition = ((activeColumnIndex + 0.5) / totalColumns) * 100;
 
-  console.log('Rendering NamePopover with name:', name);
+  const getCategoryLabel = (categories: PetNameCategoryRef[]): string => {
+    return categories.length > 1
+      ? textData.nameDetails.categoryPluralLabel
+      : textData.nameDetails.categorySingularLabel;
+  };
+
+  const getCategoryNames = (categories: PetNameCategoryRef[]): string => {
+    const categoryNames = categories.map((categoryRef) => {
+      const category = categoryList.find(
+        (cat) => cat.id === categoryRef.target_id
+      );
+      return category?.title || 'Unknown';
+    });
+
+    return categoryNames.join(', ');
+  };
 
   return (
     <Popover
@@ -117,9 +133,13 @@ const NamePopover = ({
         <CloseIcon />
       </CloseButton>
       <Title>{name.title}</Title>
-      <Category>
-        <strong>{textData.nameDetails.categoryLabel}:</strong> some categody
-      </Category>
+      {name.categories.length > 0 && (
+        <Category>
+          <strong>{getCategoryLabel(name.categories)}:</strong>{' '}
+          {getCategoryNames(name.categories)}
+        </Category>
+      )}
+
       <Definition>{parse(name.definition)}</Definition>
       <ShareButtons />
     </Popover>

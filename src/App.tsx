@@ -11,7 +11,7 @@ const AppContainer = styled.div`
   position: relative;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 24px;
+  padding: 16px;
   min-height: 200px;
 
   * {

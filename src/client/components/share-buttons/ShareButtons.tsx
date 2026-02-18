@@ -8,6 +8,7 @@ import SocialIconFacebook from '@/assets/icons/SocialIconFacebook';
 import { generalStyles } from '@/styles/variables';
 import SocialIconWhatsApp from '@/assets/icons/SocialIconWhatsApp';
 import SocialIconTwitter from '@/assets/icons/SocialIconTwitter';
+import CopyIcon from '@/assets/icons/CopyIcon';
 
 const Container = styled.div`
   margin-top: 20px;
@@ -19,6 +20,10 @@ const Container = styled.div`
     height: 24px;
     width: 24px;
     transition: fill 250ms ease-out;
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
 
     &:hover,
     &:focus {
@@ -31,6 +36,9 @@ const Container = styled.div`
 const ShareButtons = () => {
   return (
     <Container>
+      <button>
+        <CopyIcon />
+      </button>
       <FacebookShareButton url={window.location.href}>
         <SocialIconFacebook />
       </FacebookShareButton>

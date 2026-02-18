@@ -17,6 +17,7 @@ export const textData = {
   },
 
   nameDetails: {
-    categoryLabel: 'Category',
+    categoryPluralLabel: 'Categories',
+    categorySingularLabel: 'Category',
   },
 };
