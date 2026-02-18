@@ -1,3 +1,4 @@
+import NamePopover from '@/client/components/name-popover/NamePopover';
 import { useApp } from '@/client/context/context';
 import { nameList } from '@/data/nameList';
 import { generalStyles } from '@/styles/variables';
@@ -27,6 +28,7 @@ const NameCard = styled.button`
   background-color: ${generalStyles.colors.lightGray};
   font-family: ${generalStyles.fonts.primary};
   color: ${generalStyles.colors.darkGray};
+  width: 100%;
   font-size: 20px;
   box-shadow:
     rgba(58, 53, 51, 0.1) 0px 2px 12px 0px,
@@ -59,6 +61,10 @@ const ViewComponent = () => {
     return nameList;
   }, []);
 
+  const handleNameClick = (id: string): void => {
+    return nameId === id ? setNameId('') : setNameId(id);
+  };
+
   const handleActiveClass = (id: string): string => {
     return id === nameId ? 'nt-active' : '';
   };
@@ -66,13 +72,15 @@ const ViewComponent = () => {
   return (
     <Container>
       {memoizedNames.map((name) => (
-        <NameCard
-          className={handleActiveClass(name.id)}
-          key={name.id}
-          onClick={() => setNameId(name.id)}
-        >
-          {name.title}
-        </NameCard>
+        <div key={name.id}>
+          <NameCard
+            className={handleActiveClass(name.id)}
+            onClick={() => handleNameClick(name.id)}
+          >
+            {name.title}
+          </NameCard>
+          {name.id === nameId && <NamePopover name={name} />}
+        </div>
       ))}
     </Container>
   );
