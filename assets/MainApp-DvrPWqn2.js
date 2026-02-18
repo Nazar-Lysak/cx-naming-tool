@@ -1,124 +1,41 @@
-import{j as l,l as k,g as f,a as Q,r as _,u as $,p as se,m as X,t as J,d as j}from"./index.js";const de=k.div`
+import{j as e,l as a,g as i}from"./index-DYcEP_St.js";const n=a.div`
   grid-area: alphabet;
   background: green;
-`,le=()=>l.jsx(de,{children:l.jsx("h2",{children:"Alphabet Selector"})}),he=k.div`
+`,r=()=>e.jsx(n,{children:e.jsx("h2",{children:"Alphabet Selector"})}),o=a.div`
   grid-area: gender;
   background: yellow;
-`,ge=()=>l.jsx(he,{children:l.jsx("h2",{children:"Gender Selection"})}),me=k.div`
+`,s=()=>e.jsx(o,{children:e.jsx("h2",{children:"Gender Selection"})}),d=a.div`
   grid-area: swiper;
   background: blue;
-`,fe=()=>l.jsx(me,{children:l.jsx("h2",{children:"Swiper Filters"})}),pe=k.h3`
-  color: ${f.colors.darkGray};
-  font-family: ${f.fonts.primary};
+`,l=()=>e.jsx(d,{children:e.jsx("h2",{children:"Swiper Filters"})}),h=a.h3`
+  color: ${i.colors.darkGray};
+  font-family: ${i.fonts.primary};
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
   line-height: 32px;
   margin-bottom: 8px;
 
-  @media ${f.mediaQuery.mobile} {
+  @media ${i.mediaQuery.mobile} {
     font-size: 16px;
     line-height: 24px;
     margin-bottom: 16px;
   }
-`,ce=k.div`
+`,g=a.div`
   padding-bottom: 56px;
   display: grid;
   grid-template:
     'swiper gender'
     'alphabet alphabet' / 67.5% 32.5%;
 
-  @media ${f.mediaQuery.mobile} {
+  @media ${i.mediaQuery.mobile} {
     grid-template:
       'swiper'
       'alphabet'
       'gender' / 100%;
     padding-bottom: 8px;
   }
-`,ue=()=>l.jsxs("div",{children:[l.jsx(pe,{children:"Find the perfect name"}),l.jsxs(ce,{children:[l.jsx(fe,{}),l.jsx(ge,{}),l.jsx(le,{})]})]}),ye=()=>l.jsx("svg",{viewBox:"0 0 24 24",focusable:"false",children:l.jsx("path",{d:"M.439,21.44a1.5,1.5,0,0,0,2.122,2.121L11.823,14.3a.25.25,0,0,1,.354,0l9.262,9.263a1.5,1.5,0,1,0,2.122-2.121L14.3,12.177a.25.25,0,0,1,0-.354l9.263-9.262A1.5,1.5,0,0,0,21.439.44L12.177,9.7a.25.25,0,0,1-.354,0L2.561.44A1.5,1.5,0,0,0,.439,2.561L9.7,11.823a.25.25,0,0,1,0,.354Z"})});var H={exports:{}};var K;function we(){return K||(K=1,(function(e){(function(){var i={}.hasOwnProperty;function t(){for(var r="",h=0;h<arguments.length;h++){var g=arguments[h];g&&(r=o(r,n(g)))}return r}function n(r){if(typeof r=="string"||typeof r=="number")return r;if(typeof r!="object")return"";if(Array.isArray(r))return t.apply(null,r);if(r.toString!==Object.prototype.toString&&!r.toString.toString().includes("[native code]"))return r.toString();var h="";for(var g in r)i.call(r,g)&&r[g]&&(h=o(h,g));return h}function o(r,h){return h?r?r+" "+h:r+h:r}e.exports?(t.default=t,e.exports=t):window.classNames=t})()})(H)),H.exports}var be=we();const ee=Q(be);var L={exports:{}},D={exports:{}},R,q;function ke(){if(q)return R;q=1;var e=1e3,i=e*60,t=i*60,n=t*24,o=n*365.25;R=function(a,s){s=s||{};var d=typeof a;if(d==="string"&&a.length>0)return r(a);if(d==="number"&&isNaN(a)===!1)return s.long?g(a):h(a);throw new Error("val is not a non-empty string or a valid number. val="+JSON.stringify(a))};function r(a){if(a=String(a),!(a.length>100)){var s=/^((?:\d+)?\.?\d+) *(milliseconds?|msecs?|ms|seconds?|secs?|s|minutes?|mins?|m|hours?|hrs?|h|days?|d|years?|yrs?|y)?$/i.exec(a);if(s){var d=parseFloat(s[1]),p=(s[2]||"ms").toLowerCase();switch(p){case"years":case"year":case"yrs":case"yr":case"y":return d*o;case"days":case"day":case"d":return d*n;case"hours":case"hour":case"hrs":case"hr":case"h":return d*t;case"minutes":case"minute":case"mins":case"min":case"m":return d*i;case"seconds":case"second":case"secs":case"sec":case"s":return d*e;case"milliseconds":case"millisecond":case"msecs":case"msec":case"ms":return d;default:return}}}}function h(a){return a>=n?Math.round(a/n)+"d":a>=t?Math.round(a/t)+"h":a>=i?Math.round(a/i)+"m":a>=e?Math.round(a/e)+"s":a+"ms"}function g(a){return m(a,n,"day")||m(a,t,"hour")||m(a,i,"minute")||m(a,e,"second")||a+" ms"}function m(a,s,d){if(!(a<s))return a<s*1.5?Math.floor(a/s)+" "+d:Math.ceil(a/s)+" "+d+"s"}return R}var V;function ve(){return V||(V=1,(function(e,i){i=e.exports=o.debug=o.default=o,i.coerce=m,i.disable=h,i.enable=r,i.enabled=g,i.humanize=ke(),i.names=[],i.skips=[],i.formatters={};var t;function n(a){var s=0,d;for(d in a)s=(s<<5)-s+a.charCodeAt(d),s|=0;return i.colors[Math.abs(s)%i.colors.length]}function o(a){function s(){if(s.enabled){var d=s,p=+new Date,b=p-(t||p);d.diff=b,d.prev=t,d.curr=p,t=p;for(var w=new Array(arguments.length),M=0;M<w.length;M++)w[M]=arguments[M];w[0]=i.coerce(w[0]),typeof w[0]!="string"&&w.unshift("%O");var T=0;w[0]=w[0].replace(/%([a-zA-Z%])/g,function(C,x){if(C==="%%")return C;T++;var G=i.formatters[x];if(typeof G=="function"){var B=w[T];C=G.call(d,B),w.splice(T,1),T--}return C}),i.formatArgs.call(d,w);var A=s.log||i.log||console.log.bind(console);A.apply(d,w)}}return s.namespace=a,s.enabled=i.enabled(a),s.useColors=i.useColors(),s.color=n(a),typeof i.init=="function"&&i.init(s),s}function r(a){i.save(a),i.names=[],i.skips=[];for(var s=(typeof a=="string"?a:"").split(/[\s,]+/),d=s.length,p=0;p<d;p++)s[p]&&(a=s[p].replace(/\*/g,".*?"),a[0]==="-"?i.skips.push(new RegExp("^"+a.substr(1)+"$")):i.names.push(new RegExp("^"+a+"$")))}function h(){i.enable("")}function g(a){var s,d;for(s=0,d=i.skips.length;s<d;s++)if(i.skips[s].test(a))return!1;for(s=0,d=i.names.length;s<d;s++)if(i.names[s].test(a))return!0;return!1}function m(a){return a instanceof Error?a.stack||a.message:a}})(D,D.exports)),D.exports}var Z;function _e(){return Z||(Z=1,(function(e,i){var t={};i=e.exports=ve(),i.log=r,i.formatArgs=o,i.save=h,i.load=g,i.useColors=n,i.storage=typeof chrome<"u"&&typeof chrome.storage<"u"?chrome.storage.local:m(),i.colors=["lightseagreen","forestgreen","goldenrod","dodgerblue","darkorchid","crimson"];function n(){return typeof window<"u"&&window.process&&window.process.type==="renderer"?!0:typeof document<"u"&&document.documentElement&&document.documentElement.style&&document.documentElement.style.WebkitAppearance||typeof window<"u"&&window.console&&(window.console.firebug||window.console.exception&&window.console.table)||typeof navigator<"u"&&navigator.userAgent&&navigator.userAgent.toLowerCase().match(/firefox\/(\d+)/)&&parseInt(RegExp.$1,10)>=31||typeof navigator<"u"&&navigator.userAgent&&navigator.userAgent.toLowerCase().match(/applewebkit\/(\d+)/)}i.formatters.j=function(a){try{return JSON.stringify(a)}catch(s){return"[UnexpectedJSONParseError]: "+s.message}};function o(a){var s=this.useColors;if(a[0]=(s?"%c":"")+this.namespace+(s?" %c":" ")+a[0]+(s?"%c ":" ")+"+"+i.humanize(this.diff),!!s){var d="color: "+this.color;a.splice(1,0,d,"color: inherit");var p=0,b=0;a[0].replace(/%[a-zA-Z%]/g,function(w){w!=="%%"&&(p++,w==="%c"&&(b=p))}),a.splice(b,0,d)}}function r(){return typeof console=="object"&&console.log&&Function.prototype.apply.call(console.log,console,arguments)}function h(a){try{a==null?i.storage.removeItem("debug"):i.storage.debug=a}catch{}}function g(){var a;try{a=i.storage.debug}catch{}return!a&&typeof process<"u"&&"env"in process&&(a=t.DEBUG),a}i.enable(g());function m(){try{return window.localStorage}catch{}}})(L,L.exports)),L.exports}var O,Y;function Me(){if(Y)return O;Y=1;var e=_e()("jsonp");O=n;var i=0;function t(){}function n(o,r,h){typeof r=="function"&&(h=r,r={}),r||(r={});var g=r.prefix||"__jp",m=r.name||g+i++,a=r.param||"callback",s=r.timeout!=null?r.timeout:6e4,d=encodeURIComponent,p=document.getElementsByTagName("script")[0]||document.head,b,w;s&&(w=setTimeout(function(){M(),h&&h(new Error("Timeout"))},s));function M(){b.parentNode&&b.parentNode.removeChild(b),window[m]=t,w&&clearTimeout(w)}function T(){window[m]&&M()}return window[m]=function(A){e("jsonp got",A),M(),h&&h(null,A)},o+=(~o.indexOf("?")?"&":"?")+a+"="+d(m),o=o.replace("?&","?"),e('jsonp req "%s"',o),b=document.createElement("script"),b.src=o,p.parentNode.insertBefore(b,p),T}return O}var Te=Me();const F=Q(Te);var Fe=Object.defineProperty,Se=Object.defineProperties,Ce=Object.getOwnPropertyDescriptors,P=Object.getOwnPropertySymbols,ie=Object.prototype.hasOwnProperty,te=Object.prototype.propertyIsEnumerable,U=(e,i,t)=>i in e?Fe(e,i,{enumerable:!0,configurable:!0,writable:!0,value:t}):e[i]=t,v=(e,i)=>{for(var t in i||(i={}))ie.call(i,t)&&U(e,t,i[t]);if(P)for(var t of P(i))te.call(i,t)&&U(e,t,i[t]);return e},E=(e,i)=>Se(e,Ce(i)),N=(e,i)=>{var t={};for(var n in e)ie.call(e,n)&&i.indexOf(n)<0&&(t[n]=e[n]);if(e!=null&&P)for(var n of P(e))i.indexOf(n)<0&&te.call(e,n)&&(t[n]=e[n]);return t};class Ae extends Error{constructor(i){super(i),this.name="AssertionError"}}function u(e,i){if(!e)throw new Ae(i)}function c(e){const i=Object.entries(e).filter(([,t])=>t!=null).map(([t,n])=>`${encodeURIComponent(t)}=${encodeURIComponent(String(n))}`);return i.length>0?`?${i.join("&")}`:""}const xe=e=>!!e&&(typeof e=="object"||typeof e=="function")&&"then"in e&&typeof e.then=="function",Be=(e,i)=>({left:window.outerWidth/2+(window.screenX||window.screenLeft||0)-e/2,top:window.outerHeight/2+(window.screenY||window.screenTop||0)-i/2}),Ge=(e,i)=>({top:(window.screen.height-i)/2,left:(window.screen.width-e)/2});function Ie(e,i,t){var n=i,{height:o,width:r}=n,h=N(n,["height","width"]);const g=v({height:o,width:r,location:"no",toolbar:"no",status:"no",directories:"no",menubar:"no",scrollbars:"yes",resizable:"no",centerscreen:"yes",chrome:"yes"},h),m=window.open(e,"",Object.keys(g).map(a=>`${a}=${g[a]}`).join(", "));if(t){const a=window.setInterval(()=>{try{(m===null||m.closed)&&(window.clearInterval(a),t(m))}catch(s){console.error(s)}},1e3)}return m}function Le(e){var i=e,{beforeOnClick:t,children:n,className:o,disabled:r,disabledStyle:h={opacity:.6},forwardedRef:g,htmlTitle:m,networkLink:a,networkName:s,onClick:d,onShareWindowClose:p,openShareDialogOnClick:b=!0,opts:w,resetButtonStyle:M=!0,style:T,title:A,url:C,windowHeight:x=400,windowPosition:G="windowCenter",windowWidth:B=550}=i,ae=N(i,["beforeOnClick","children","className","disabled","disabledStyle","forwardedRef","htmlTitle","networkLink","networkName","onClick","onShareWindowClose","openShareDialogOnClick","opts","resetButtonStyle","style","title","url","windowHeight","windowPosition","windowWidth"]);const ne=async W=>{const z=a(C,w);if(!r){if(W.preventDefault(),t){const I=t();xe(I)&&await I}if(b){const I=v({height:x,width:B},G==="windowCenter"?Be(B,x):Ge(B,x));Ie(z,I,p)}d&&d(W,z)}},oe=ee("react-share__ShareButton",{"react-share__ShareButton--disabled":!!r,disabled:!!r},o),re=v(v(M?{backgroundColor:"transparent",border:"none",padding:0,font:"inherit",color:"inherit",cursor:"pointer"}:{},T),r&&h);return l.jsx("button",E(v({},ae),{className:oe,onClick:ne,ref:g,style:re,title:m,children:n}))}function y(e,i,t,n){const o=(r,h)=>{const g=t(r),m=v({},r);return Object.keys(g).forEach(s=>{delete m[s]}),l.jsx(Le,E(v(v({},n),m),{forwardedRef:h,networkName:e,networkLink:i,opts:g}))};return o.displayName=`ShareButton-${e}`,_.forwardRef(o)}function De(e,{title:i,separator:t}){return u(e,"bluesky.url"),"https://bsky.app/intent/compose"+c({text:i?i+t+e:e})}y("bluesky",De,e=>({title:e.title,separator:e.separator||" "}),{windowWidth:660,windowHeight:460,windowPosition:"windowCenter"});function Pe(e,{subject:i,body:t,separator:n}){return"mailto:"+c({subject:i,body:t?t+n+e:e})}y("email",Pe,e=>({subject:e.subject,body:e.body,separator:e.separator||" "}),{openShareDialogOnClick:!1,onClick:(e,i)=>{window.location.href=i}});function je(e,{appId:i,redirectUri:t,to:n}){return"https://www.facebook.com/dialog/send"+c({link:e,redirect_uri:t||e,app_id:i,to:n})}y("facebookmessenger",je,e=>({appId:e.appId,redirectUri:e.redirectUri,to:e.to}),{windowWidth:1e3,windowHeight:820});function He(e,{hashtag:i}){return u(e,"facebook.url"),"https://www.facebook.com/sharer/sharer.php"+c({u:e,hashtag:i})}const Re=y("facebook",He,e=>({hashtag:e.hashtag}),{windowWidth:550,windowHeight:400});function Oe(){const e=_.useRef(!1);return _.useEffect(()=>(e.current=!0,()=>{e.current=!1}),[]),_.useCallback(()=>e.current,[])}function Ee(e){var i=e,{children:t=p=>p,className:n,getCount:o,url:r}=i,h=N(i,["children","className","getCount","url"]);const g=Oe(),[m,a]=_.useState(void 0),[s,d]=_.useState(!1);return _.useEffect(()=>{d(!0),o(r,p=>{g()&&(a(p),d(!1))})},[r]),l.jsx("span",E(v({className:ee("react-share__ShareCount",n)},h),{children:!s&&m!==void 0&&t(m)}))}function S(e){const i=t=>l.jsx(Ee,v({getCount:e},t));return i.displayName=`ShareCount(${e.name})`,i}function Ne(e,i){const t=`https://graph.facebook.com/?id=${e}&fields=og_object{engagement}`;F(t,(n,o)=>{i(!n&&o&&o.og_object&&o.og_object.engagement?o.og_object.engagement.count:void 0)})}S(Ne);function We(e,{title:i}){return u(e,"hatena.url"),`http://b.hatena.ne.jp/add?mode=confirm&url=${e}&title=${i}`}y("hatena",We,e=>({title:e.title}),{windowWidth:660,windowHeight:460,windowPosition:"windowCenter"});function ze(e,i){F("https://bookmark.hatenaapis.com/count/entry"+c({url:e}),(n,o)=>{i(o??void 0)})}S(ze);function Je(e,{title:i,description:t}){return u(e,"instapaper.url"),"http://www.instapaper.com/hello2"+c({url:e,title:i,description:t})}y("instapaper",Je,e=>({title:e.title,description:e.description}),{windowWidth:500,windowHeight:500,windowPosition:"windowCenter"});function Ke(e,{title:i}){return u(e,"line.url"),"https://social-plugins.line.me/lineit/share"+c({url:e,text:i})}y("line",Ke,e=>({title:e.title}),{windowWidth:500,windowHeight:500});function qe(e,{title:i,summary:t,source:n}){return u(e,"linkedin.url"),"https://linkedin.com/shareArticle"+c({url:e,mini:"true",title:i,summary:t,source:n})}y("linkedin",qe,({title:e,summary:i,source:t})=>({title:e,summary:i,source:t}),{windowWidth:750,windowHeight:600});function Ve(e,{title:i,description:t}){return u(e,"livejournal.url"),"https://www.livejournal.com/update.bml"+c({subject:i,event:t})}y("livejournal",Ve,e=>({title:e.title,description:e.description}),{windowWidth:660,windowHeight:460});function Ze(e,{title:i,description:t,imageUrl:n}){return u(e,"mailru.url"),"https://connect.mail.ru/share"+c({url:e,title:i,description:t,image_url:n})}y("mailru",Ze,e=>({title:e.title,description:e.description,imageUrl:e.imageUrl}),{windowWidth:660,windowHeight:460});function Ye(e,{title:i,description:t,image:n}){return u(e,"ok.url"),"https://connect.ok.ru/offer"+c({url:e,title:i,description:t,imageUrl:n})}y("ok",Ye,e=>({title:e.title,description:e.description,image:e.image}),{windowWidth:588,windowHeight:480,windowPosition:"screenCenter"});function Ue(e,i){window.OK||(window.OK={Share:{count:function(r,h){var g,m;(m=(g=window.OK.callbacks)[r])==null||m.call(g,h)}},callbacks:[]});const t="https://connect.ok.ru/dk",n=window.OK.callbacks.length;return window.ODKL={updateCount(o,r){var h,g;const m=o===""?0:parseInt(o.replace("react-share-",""),10);(g=(h=window.OK.callbacks)[m])==null||g.call(h,r===""?void 0:parseInt(r,10))}},window.OK.callbacks.push(i),F(t+c({"st.cmd":"extLike",uid:`react-share-${n}`,ref:e}))}S(Ue);function Qe(e,{media:i,description:t,pinId:n}){return n?`https://pinterest.com/pin/${n}/repin/x/`:(u(e,"pinterest.url"),u(i,"pinterest.media"),"https://pinterest.com/pin/create/button/"+c({url:e,media:i,description:t}))}y("pinterest",Qe,e=>({media:e.media,description:e.description,pinId:e.pinId}),{windowWidth:1e3,windowHeight:730});function $e(e,i){F("https://api.pinterest.com/v1/urls/count.json"+c({url:e}),(n,o)=>{i(o?o.count:void 0)})}S($e);function Xe(e,{title:i}){return u(e,"pocket.url"),"https://getpocket.com/save"+c({url:e,title:i})}y("pocket",Xe,e=>({title:e.title}),{windowWidth:500,windowHeight:500});function ei(e,{title:i}){return u(e,"reddit.url"),"https://www.reddit.com/web/submit"+c({url:e,title:i})}y("reddit",ei,e=>({title:e.title}),{windowWidth:660,windowHeight:460,windowPosition:"windowCenter"});function ii(e,{title:i}){return u(e,"gab.url"),"https://gab.com/compose"+c({url:e,text:i})}y("gab",ii,e=>({title:e.title}),{windowWidth:660,windowHeight:640,windowPosition:"windowCenter"});function ti(e,i){const t=`https://www.reddit.com/api/info.json?limit=1&url=${e}`;F(t,{param:"jsonp"},(n,o)=>{i(!n&&o&&o.data&&o.data.children.length>0&&o.data.children[0].data.score?o.data.children[0].data.score:void 0)})}S(ti);function ai(e,{title:i}){return u(e,"telegram.url"),"https://telegram.me/share/url"+c({url:e,text:i})}y("telegram",ai,e=>({title:e.title}),{windowWidth:550,windowHeight:400});function ni(e,{title:i}){return u(e,"threads.url"),"https://threads.net/intent/post"+c({url:e,text:i})}y("threads",ni,e=>({title:e.title}),{windowWidth:550,windowHeight:600});function oi(e,{title:i,caption:t,tags:n,posttype:o}){return u(e,"tumblr.url"),"https://www.tumblr.com/widgets/share/tool"+c({canonicalUrl:e,title:i,caption:t,tags:n,posttype:o})}y("tumblr",oi,e=>({title:e.title,tags:(e.tags||[]).join(","),caption:e.caption,posttype:e.posttype||"link"}),{windowWidth:660,windowHeight:460});function ri(e,i){return F("https://api.tumblr.com/v2/share/stats"+c({url:e}),(n,o)=>{i(!n&&o&&o.response?o.response.note_count:void 0)})}S(ri);function si(e,{title:i,via:t,hashtags:n=[],related:o=[]}){return u(e,"twitter.url"),u(Array.isArray(n),"twitter.hashtags is not an array"),u(Array.isArray(o),"twitter.related is not an array"),"https://twitter.com/intent/tweet"+c({url:e,text:i,via:t,hashtags:n.length>0?n.join(","):void 0,related:o.length>0?o.join(","):void 0})}const di=y("twitter",si,e=>({hashtags:e.hashtags,title:e.title,via:e.via,related:e.related}),{windowWidth:550,windowHeight:400});function li(e,{title:i,separator:t}){return u(e,"viber.url"),"viber://forward"+c({text:i?i+t+e:e})}y("viber",li,e=>({title:e.title,separator:e.separator||" "}),{windowWidth:660,windowHeight:460});function hi(e,{title:i,image:t,noParse:n,noVkLinks:o}){return u(e,"vk.url"),"https://vk.com/share.php"+c({url:e,title:i,image:t,noparse:n?1:0,no_vk_links:o?1:0})}y("vk",hi,e=>({title:e.title,image:e.image,noParse:e.noParse,noVkLinks:e.noVkLinks}),{windowWidth:660,windowHeight:460});function gi(e,i){window.VK||(window.VK={}),window.VK.Share={count:(o,r)=>{var h,g;return(g=(h=window.VK.callbacks)==null?void 0:h[o])==null?void 0:g.call(h,r)}},window.VK.callbacks=[];const t="https://vk.com/share.php",n=window.VK.callbacks.length;return window.VK.callbacks.push(i),F(t+c({act:"count",index:n,url:e}))}S(gi);function mi(e,{title:i,image:t}){return u(e,"weibo.url"),"http://service.weibo.com/share/share.php"+c({url:e,title:i,pic:t})}y("weibo",mi,e=>({title:e.title,image:e.image}),{windowWidth:660,windowHeight:550,windowPosition:"screenCenter"});function fi(){return/(android|iphone|ipad|mobile)/i.test(navigator.userAgent)}function pi(e,{title:i,separator:t}){return u(e,"whatsapp.url"),"https://"+(fi()?"api":"web")+".whatsapp.com/send"+c({text:i?i+t+e:e})}const ci=y("whatsapp",pi,e=>({title:e.title,separator:e.separator||" "}),{windowWidth:550,windowHeight:400});function ui(e,{quote:i,hashtag:t}){return u(e,"workplace.url"),"https://work.facebook.com/sharer.php"+c({u:e,quote:i,hashtag:t})}y("workplace",ui,e=>({quote:e.quote,hashtag:e.hashtag}),{windowWidth:550,windowHeight:400});const yi=()=>l.jsx("svg",{viewBox:"0 0 32 32",focusable:"false",children:l.jsx("path",{d:"M16.5 2C8.76792 2 2.5 8.26792 2.5 16C2.5 23.7321 8.76792 30 16.5 30C24.2321 30 30.5 23.7321 30.5 16C30.5 8.26792 24.2321 2 16.5 2ZM19.8162 11.6746H17.7119C17.4625 11.6746 17.1854 12.0027 17.1854 12.4387V13.9583H19.8177L19.4196 16.1254H17.1854V22.631H14.7019V16.1254H12.4487V13.9583H14.7019V12.6837C14.7019 10.855 15.9706 9.36896 17.7119 9.36896H19.8162V11.6746Z"})}),wi=()=>l.jsx("svg",{viewBox:"0 0 32 32",focusable:"false",children:l.jsx("path",{fillRule:"evenodd",clipRule:"evenodd",d:"M2.5 16C2.5 8.26801 8.76801 2 16.5 2C24.232 2 30.5 8.26801 30.5 16C30.5 23.732 24.232 30 16.5 30C8.76801 30 2.5 23.732 2.5 16ZM13.117 22.5991C14.2746 23.2213 15.5686 23.5461 16.8828 23.5442C18.6338 23.544 20.3359 22.9669 21.7259 21.9021C23.1159 20.8374 24.1164 19.3442 24.5725 17.6537C25.0287 15.9632 24.9151 14.1695 24.2494 12.55C23.5836 10.9306 22.4028 9.57557 20.8896 8.69464C19.3764 7.8137 17.615 7.4559 15.878 7.67659C14.141 7.89728 12.5251 8.68416 11.2803 9.91551C10.0354 11.1469 9.23099 12.7541 8.99138 14.4886C8.75177 16.2231 9.09034 17.9882 9.95473 19.5109L8.88203 23.6562L13.117 22.5991ZM15.2509 17.6481C17.2771 19.3821 19.2005 19.6076 20.1217 19.1755C21.0428 18.7437 21.0482 17.6119 20.9695 17.4109C20.8909 17.2098 19.0772 16.4267 18.9068 16.5984C18.7365 16.7701 18.1582 17.563 18.1582 17.563C18.1582 17.563 17.4614 17.7015 16.1588 16.5868C14.8563 15.472 14.8855 14.7622 14.8855 14.7622C14.8855 14.7622 15.5792 14.0684 15.7228 13.8735C15.8664 13.6786 14.8125 12.0078 14.6017 11.9611C14.391 11.9145 13.2737 12.0949 12.9893 13.0718C12.7049 14.0486 13.2247 15.9141 15.2509 17.6481Z"})}),bi=()=>l.jsx("svg",{viewBox:"0 0 32 32",focusable:"false",children:l.jsx("path",{d:"M16.5 2C8.76875 2 2.5 8.26875 2.5 16C2.5 23.7313 8.76875 30 16.5 30C24.2313 30 30.5 23.7313 30.5 16C30.5 8.26875 24.2313 2 16.5 2ZM23.2281 12.5531C23.2375 12.7 23.2375 12.8531 23.2375 13.0031C23.2375 17.5906 19.7437 22.875 13.3594 22.875C11.3906 22.875 9.56562 22.3031 8.02812 21.3188C8.30937 21.35 8.57813 21.3625 8.86563 21.3625C10.4906 21.3625 11.9844 20.8125 13.175 19.8813C11.65 19.85 10.3687 18.85 9.93125 17.475C10.4656 17.5531 10.9469 17.5531 11.4969 17.4125C10.7116 17.253 10.0059 16.8265 9.49943 16.2056C8.99299 15.5846 8.71715 14.8075 8.71875 14.0063V13.9625C9.17812 14.2219 9.71875 14.3812 10.2844 14.4031C9.80888 14.0862 9.41893 13.6569 9.1491 13.1532C8.87926 12.6495 8.73789 12.087 8.7375 11.5156C8.7375 10.8687 8.90625 10.2781 9.20938 9.76562C10.0809 10.8386 11.1685 11.7161 12.4015 12.3411C13.6344 12.9662 14.985 13.3249 16.3656 13.3938C15.875 11.0344 17.6375 9.125 19.7563 9.125C20.7563 9.125 21.6562 9.54375 22.2906 10.2188C23.075 10.0719 23.825 9.77812 24.4937 9.38437C24.2344 10.1875 23.6906 10.8656 22.9688 11.2937C23.6688 11.2188 24.3438 11.025 24.9688 10.7531C24.4969 11.4469 23.9062 12.0625 23.2281 12.5531Z"})}),ki=()=>l.jsx("svg",{viewBox:"0 0 32 32",focusable:"false",children:l.jsx("path",{fillRule:"evenodd",clipRule:"evenodd",d:"M16.5 30C24.232 30 30.5 23.732 30.5 16C30.5 8.26801 24.232 2 16.5 2C8.76801 2 2.5 8.26801 2.5 16C2.5 23.732 8.76801 30 16.5 30ZM20.4637 11.4077C19.6785 11.568 18.7939 11.9802 17.9554 12.6424C18.0947 12.7465 18.2276 12.8632 18.3531 12.9931C19.3409 14.0159 19.4899 15.4718 19.1638 16.8264C19.0325 17.3718 18.8208 17.9243 18.5364 18.4662C19.3396 18.1802 20.1998 17.6576 20.9841 16.9002C21.9844 15.9343 22.6073 14.8317 22.8393 13.8677C23.0745 12.8907 22.8884 12.1977 22.5114 11.8073C22.1345 11.417 21.4484 11.2068 20.4637 11.4077ZM16.0422 11.7827C15.9882 11.8348 15.9349 11.8875 15.8824 11.9405C15.4419 11.919 14.9917 11.9591 14.5504 12.0491C13.172 12.3304 11.7316 13.1155 10.5106 14.2946C9.28961 15.4737 8.45476 16.8858 8.12551 18.2536C7.79942 19.6083 7.94844 21.0641 8.93619 22.0869C9.92394 23.1098 11.3737 23.3095 12.7389 23.0309C14.1173 22.7496 15.5577 21.9645 16.7787 20.7854C16.8327 20.7333 16.886 20.6806 16.9385 20.6276C17.379 20.6491 17.8292 20.609 18.2705 20.519C19.6489 20.2377 21.0893 19.4526 22.3103 18.2735C23.5313 17.0944 24.3661 15.6823 24.6954 14.3145C25.0215 12.9598 24.8725 11.504 23.8847 10.4812C22.897 9.45832 21.4472 9.25858 20.082 9.5372C18.7036 9.81851 17.2632 10.6036 16.0422 11.7827ZM12.3572 21.1604C13.1424 21.0001 14.027 20.5878 14.8655 19.9257C14.7262 19.8216 14.5933 19.7049 14.4678 19.575C13.48 18.5521 13.331 17.0963 13.6571 15.7416C13.7884 15.1963 14.0001 14.6438 14.2845 14.1019C13.4813 14.3879 12.6211 14.9105 11.8368 15.6679C10.8366 16.6338 10.2136 17.7364 9.98159 18.7004C9.74639 19.6774 9.93254 20.3704 10.3095 20.7608C10.6864 21.1511 11.3725 21.3613 12.3572 21.1604ZM15.8411 18.2488C15.948 18.3595 16.0798 18.4558 16.2362 18.5322C16.7851 17.8102 17.1439 17.0604 17.3077 16.3797C17.5429 15.4026 17.3568 14.7096 16.9798 14.3193C16.8729 14.2085 16.7411 14.1123 16.5847 14.0359C16.0358 14.7579 15.677 15.5077 15.5132 16.1884C15.278 17.1655 15.4641 17.8585 15.8411 18.2488Z"})}),vi=k.div`
-  margin-top: 20px;
-  display: flex;
-  gap: 12px;
-  fill: ${f.colors.red};
-
-  button {
-    height: 24px;
-    width: 24px;
-    transition: fill 250ms ease-out;
-    padding: 0;
-    background: none;
-    border: none;
-    cursor: pointer;
-
-    &:hover,
-    &:focus {
-      fill: ${f.colors.darkGray};
-      outline: none;
-    }
-  }
-`,_i=()=>l.jsxs(vi,{children:[l.jsx("button",{children:l.jsx(ki,{})}),l.jsx(Re,{url:window.location.href,children:l.jsx(yi,{})}),l.jsx(di,{url:window.location.href,children:l.jsx(bi,{})}),l.jsx(ci,{url:window.location.href,children:l.jsx(wi,{})})]}),Mi=[{id:"3285",title:"Most Popular",icon_desktop_tablet:"https://www.purina.co.uk/sites/default/files/2024-02/48px%20Most%20popular.png",icon_mobile:"https://www.purina.co.uk/sites/default/files/2024-02/24px%20Most%20popular24px.png"},{id:"4361",title:"Norse",icon_desktop_tablet:"https://www.purina.co.uk/sites/default/files/2024-10/boat48x48.png",icon_mobile:"https://www.purina.co.uk/sites/default/files/2024-10/boat24x24.png"},{id:"3286",title:"Unusual",icon_desktop_tablet:"https://www.purina.co.uk/sites/default/files/2024-02/48px%20Unusual.png",icon_mobile:"https://www.purina.co.uk/sites/default/files/2024-02/24px%20Unusual24px.png"},{id:"3287",title:"Optimistic",icon_desktop_tablet:"https://www.purina.co.uk/sites/default/files/2024-02/48px%20Optimistic.png",icon_mobile:"https://www.purina.co.uk/sites/default/files/2024-02/24px%20Optimistic24px.png"},{id:"3288",title:"Small",icon_desktop_tablet:"https://www.purina.co.uk/sites/default/files/2024-02/48px%20Small.png",icon_mobile:"https://www.purina.co.uk/sites/default/files/2024-02/24px%20Small24px.png"},{id:"3289",title:"Large",icon_desktop_tablet:"https://www.purina.co.uk/sites/default/files/2024-02/48px%20Large.png",icon_mobile:"https://www.purina.co.uk/sites/default/files/2024-02/24px%20Large24px.png"},{id:"3290",title:"Short Names",icon_desktop_tablet:"https://www.purina.co.uk/sites/default/files/2024-02/48px%20Short.png",icon_mobile:"https://www.purina.co.uk/sites/default/files/2024-02/24px%20Short24px.png"},{id:"3291",title:"Disney",icon_desktop_tablet:"https://www.purina.co.uk/sites/default/files/2024-02/48px%20Disney.png",icon_mobile:"https://www.purina.co.uk/sites/default/files/2024-02/24px%20Disney24px.png"},{id:"3292",title:"Space and Science",icon_desktop_tablet:"https://www.purina.co.uk/sites/default/files/2024-02/48px%20Space%20%26%20Science.png",icon_mobile:"https://www.purina.co.uk/sites/default/files/2024-02/24px%20Space%20%26%20Science24px.png"},{id:"3293",title:"Magical and Mythical",icon_desktop_tablet:"https://www.purina.co.uk/sites/default/files/2024-02/48px%20Magical%20and%20Mythical.png",icon_mobile:"https://www.purina.co.uk/sites/default/files/2024-02/24px%20Magical%20and%20Mythical24px.png"},{id:"3294",title:"Nature",icon_desktop_tablet:"https://www.purina.co.uk/sites/default/files/2024-02/48px%20Natural.png",icon_mobile:"https://www.purina.co.uk/sites/default/files/2024-02/24px%20Natural24px.png"},{id:"3295",title:"Musical",icon_desktop_tablet:"https://www.purina.co.uk/sites/default/files/2024-02/48px%20Musical.png",icon_mobile:"https://www.purina.co.uk/sites/default/files/2024-02/24px%20Musical24px.png"},{id:"3296",title:"Literary",icon_desktop_tablet:"https://www.purina.co.uk/sites/default/files/2024-02/48px%20Litarary.png",icon_mobile:"https://www.purina.co.uk/sites/default/files/2024-02/24px%20Litarary24px.png"},{id:"3297",title:"Celebrities",icon_desktop_tablet:"https://www.purina.co.uk/sites/default/files/2024-02/48px%20Celebrities.png",icon_mobile:"https://www.purina.co.uk/sites/default/files/2024-02/24px%20celebrities24px.png"},{id:"3298",title:"Foodie",icon_desktop_tablet:"https://www.purina.co.uk/sites/default/files/2024-02/48px%20Foodie.png",icon_mobile:"https://www.purina.co.uk/sites/default/files/2024-02/24px%20Foodie24px.png"},{id:"3299",title:"Drinks",icon_desktop_tablet:"https://www.purina.co.uk/sites/default/files/2024-02/48px%20Drinks.png",icon_mobile:"https://www.purina.co.uk/sites/default/files/2024-02/24px%20Drinks24px.png"},{id:"3300",title:"Cartoon",icon_desktop_tablet:"https://www.purina.co.uk/sites/default/files/2024-02/48px%20Cartoon.png",icon_mobile:"https://www.purina.co.uk/sites/default/files/2024-02/24px%20Cartoon24px.png"},{id:"3301",title:"Regal",icon_desktop_tablet:"https://www.purina.co.uk/sites/default/files/2024-02/48px%20Regal.png",icon_mobile:"https://www.purina.co.uk/sites/default/files/2024-02/24px%20Regal24px.png"},{id:"3303",title:"French",icon_desktop_tablet:"https://www.purina.co.uk/sites/default/files/2024-02/48px%20French.png",icon_mobile:"https://www.purina.co.uk/sites/default/files/2024-02/24px%20French24px.png"},{id:"3304",title:"German",icon_desktop_tablet:"https://www.purina.co.uk/sites/default/files/2023-12/germany-48x48.png",icon_mobile:"https://www.purina.co.uk/sites/default/files/2023-12/germany-24x24.png"},{id:"3305",title:"Greek",icon_desktop_tablet:"https://www.purina.co.uk/sites/default/files/2024-02/48px%20Greek.png",icon_mobile:"https://www.purina.co.uk/sites/default/files/2024-02/24px%20Greek24px.png"},{id:"3306",title:"Italian",icon_desktop_tablet:"https://www.purina.co.uk/sites/default/files/2024-02/48px%20Italy.png",icon_mobile:"https://www.purina.co.uk/sites/default/files/2024-02/24px%20Italy24px.png"},{id:"3307",title:"Scottish",icon_desktop_tablet:"https://www.purina.co.uk/sites/default/files/2024-02/48px%20Scottish.png",icon_mobile:"https://www.purina.co.uk/sites/default/files/2024-12/24px%20Scottish.png"},{id:"3308",title:"Spanish",icon_desktop_tablet:"https://www.purina.co.uk/sites/default/files/2024-02/48px%20Spain.png",icon_mobile:"https://www.purina.co.uk/sites/default/files/2024-02/24px%20Spain24px.png"}],Ti=k(X.div)`
-  position: relative;
-  grid-column: 1 / -1;
-  padding: 48px;
-  background-color: ${f.colors.white};
-  border: 1px solid ${f.colors.red};
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 16px 0px;
-  border-radius: 8px;
-  margin-top: 22px;
-`,Fi=k.span`
-  position: absolute;
-  height: 20px;
-  width: 20px;
-  top: -11px;
-  left: ${e=>e.$position}%;
-  border-left: 1px solid ${f.colors.red};
-  border-top: 1px solid ${f.colors.red};
-  background: ${f.colors.white};
-  transform: translateX(-50%) rotate(45deg);
-  z-index: 1;
-`,Si=k.button`
-  fill: ${f.colors.red};
-  position: absolute;
-  top: 16px;
-  right: 16px;
-  height: 24px;
-  width: 24px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 4px;
-`,Ci=k.h2`
-  margin: 0 0 16px 0;
-  font-size: 60px;
-  font-weight: 400;
-  line-height: 66px;
-  font-family: ${f.fonts.primary};
-  color: ${f.colors.darkGray};
-`,Ai=k.p`
-  margin: 0 0 16px 0;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 24px;
-  font-family: ${f.fonts.primary};
-  color: ${f.colors.gray};
-`,xi=k.div`
-  max-width: 708px;
-  padding: 24px 0;
-  border-top: 1px dashed ${f.colors.beige};
-  border-bottom: 1px dashed ${f.colors.beige};
-  font-family: ${f.fonts.primary};
-  font-size: 20px;
-  line-height: 32px;
-  color: ${f.colors.gray};
-
-  a {
-    text-decoration: none;
-    color: inherit;
-    font-weight: 500;
-    border-bottom: 1px solid transparent;
-    border-bottom: 1.2px solid ${f.colors.red};
-  }
-`,Bi=({name:e,activeColumnIndex:i,totalColumns:t})=>{const{setNameId:n}=$(),o=(i+.5)/t*100,r=g=>g.length>1?J.nameDetails.categoryPluralLabel:J.nameDetails.categorySingularLabel,h=g=>g.map(a=>Mi.find(d=>d.id===a.target_id)?.title||"Unknown").join(", ");return l.jsxs(Ti,{initial:{opacity:0,transform:"translateY(50px)"},animate:{opacity:1,transform:"translateY(0px)",transition:{opacity:{delay:.1}}},transition:{duration:.5},children:[l.jsx(Fi,{$position:o}),l.jsx(Si,{onClick:()=>n(""),children:l.jsx(ye,{})}),l.jsx(Ci,{children:e.title}),e.categories.length>0&&l.jsxs(Ai,{children:[l.jsxs("strong",{children:[r(e.categories),":"]})," ",h(e.categories)]}),l.jsx(xi,{children:se(e.definition)}),l.jsx(_i,{})]},e.id)},Gi=[{id:"3502",title:"Aaron",definition:`<p>Aaron is a Hebrew male name that means 'exalted'. There are interpretations of the name that suggest the meaning is 'teacher' or 'mountain of strength'. This is a great name for a pet that is strong in mind and in build.</p>\r
+`,m=()=>e.jsxs("div",{children:[e.jsx(h,{children:"Find the perfect name"}),e.jsxs(g,{children:[e.jsx(l,{}),e.jsx(s,{}),e.jsx(r,{})]})]}),f=[{id:"3502",title:"Aaron",definition:`<p>Aaron is a Hebrew male name that means 'exalted'. There are interpretations of the name that suggest the meaning is 'teacher' or 'mountain of strength'. This is a great name for a pet that is strong in mind and in build.</p>\r
 `,gender:"Male",categories:[{target_id:"3290"}]},{id:"3894",title:"Abby",definition:"Originally a Hebrew name with biblical origins, Abby means 'father's joy'. Perfect for any daddy's girls!",gender:"Female",categories:[{target_id:"3287"},{target_id:"3290"}]},{id:"4028",title:"Abu",definition:`<p>The name Abu is a male name of African origin that means 'Nobility'. It is also often used as a nickname as it can also mean 'father of' in Indian culture.</p>\r
 \r
 <p>The name Abu is most famous as the mischevious pet monkey of Aladdin!</p>\r
@@ -802,28 +719,27 @@ import{j as l,l as k,g as f,a as Q,r as _,u as $,p as se,m as X,t as J,d as j}fr
 `,gender:"Female",categories:[]},{id:"4223",title:"Zola",definition:`<p>The name "Zola" has multiple origins and meanings. It can be derived from the Italian name "Zoilo," meaning "life" or "alive." It can also be associated with the African name "Zulu," meaning "quiet" or "peaceful." It would be a fitting choice for a dog owner seeking a name that reflects their furry friend's gentle and harmonious personality.&nbsp;</p>\r
 `,gender:"Female",categories:[]},{id:"4095",title:"Zorro",definition:`<p>The Spanish meaning of Zorro is 'sly' or 'fox' - perfect for fox-type dogs like the <a href="/find-a-pet/dog-breeds/japanese-akita" rel="noopener" target="_blank">Akita</a>, <a href="/find-a-pet/dog-breeds/japanese-shiba-inu" rel="noopener" target="_blank">Shiba Inu</a> and various <a href="/find-a-pet/dog-breeds/japanese-spitz" rel="noopener" target="_blank">Spitzs</a>!</p>\r
 `,gender:"Male",categories:[{target_id:"3308"}]},{id:"4153",title:"Zuzu",definition:`<p>Meaning "lily" in Czech and "little pearl" in Chinese, there's something a little fun and feisty about the name Zuzu!</p>\r
-`,gender:"Female",categories:[]}],Ii=k.div`
+`,gender:"Female",categories:[]}],p=a.div`
   display: grid;
   gap: 16px;
   grid-template-columns: repeat(4, minmax(0px, 1fr));
   position: relative;
 
-  @media ${f.mediaQuery.tablet} {
+  @media ${i.mediaQuery.tablet} {
     grid-template-columns: repeat(3, minmax(0px, 1fr));
   }
 
-  @media ${f.mediaQuery.mobile} {
+  @media ${i.mediaQuery.mobile} {
     grid-template-columns: repeat(2, minmax(0px, 1fr));
   }
 
-  @media ${f.mediaQuery.mobileS} {
+  @media ${i.mediaQuery.mobileS} {
     grid-template-columns: repeat(1, minmax(0px, 1fr));
   }
-`,Li=k.button`
-  background-color: ${f.colors.lightGray};
-  font-family: ${f.fonts.primary};
-  color: ${f.colors.darkGray};
-  font-size: 20px;
+`,c=a.button`
+  background-color: ${i.colors.lightGray};
+  font-family: ${i.fonts.primary};
+  color: ${i.colors.darkGray};
   box-shadow:
     rgba(58, 53, 51, 0.1) 0px 2px 12px 0px,
     rgba(58, 53, 51, 0.2) 0px 0px 2px 0px;
@@ -837,12 +753,7 @@ import{j as l,l as k,g as f,a as Q,r as _,u as $,p as se,m as X,t as J,d as j}fr
     color 250ms ease-out;
 
   &:hover {
-    background-color: ${f.colors.darkGray};
-    color: ${f.colors.white};
+    background-color: ${i.colors.darkGray};
+    color: ${i.colors.white};
   }
-
-  &.nt-active {
-    background-color: ${f.colors.red};
-    color: ${f.colors.white};
-  }
-`,Di=()=>{const{nameId:e,setNameId:i}=$(),[t,n]=_.useState(5),o=_.useMemo(()=>(console.log("Memoized names recalculated"),Gi),[]);_.useEffect(()=>{const d=()=>{const p=window.innerWidth;let b;switch(!0){case p<=j.mobileS:b=1;break;case p<=j.mobile:b=2;break;case p<=j.tablet:b=3;break;default:b=4}n(b)};return d(),window.addEventListener("resize",d),()=>window.removeEventListener("resize",d)},[]);const r=d=>i(e===d?"":d),h=d=>d===e?"nt-active":"",g=o.findIndex(d=>d.id===e),m=g>=0?Math.ceil((g+1)/t)*t-1:-1,a=g>=0?o[g]:null,s=g>=0?g%t:0;return l.jsx(Ii,{children:o.map((d,p)=>l.jsxs(_.Fragment,{children:[l.jsx(Li,{className:h(d.id),onClick:()=>r(d.id),children:d.title}),p===m&&a&&l.jsx(Bi,{name:a,activeColumnIndex:s,totalColumns:t})]},d.id))})};function ji(e){return console.log(e),l.jsxs(X.div,{initial:{opacity:0},animate:{opacity:1},transition:{duration:.5,ease:"easeIn"},children:[l.jsx(ue,{}),l.jsx(Di,{})]})}export{ji as default};
+`,u=()=>e.jsx(p,{children:f.map(t=>e.jsx(c,{children:t.title},t.id))});function b(t){return console.log(t),e.jsxs("div",{className:"main-app",children:[e.jsx(m,{}),e.jsx(u,{})]})}export{b as default};
