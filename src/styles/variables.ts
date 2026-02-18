@@ -11,5 +11,10 @@ export const generalStyles = {
     primary: 'Helvetica, sans-serif',
     secondary: 'Arial, sans-serif',
   },
-  borderRadius: '4px',
+  mediaQuery: {
+    mobileS: '(max-width: 480px)',
+    mobile: '(max-width: 768px)',
+    tablet: '(max-width: 1024px)',
+    desktop: '(min-width: 1025px)',
+  },
 };

@@ -16,7 +16,7 @@ const Container = styled(motion.div)`
   min-height: 400px;
   padding: 16px;
   background-color: ${generalStyles.colors.lightGray};
-  border-radius: ${generalStyles.borderRadius};
+  border-radius: 16px;
   font-family: ${generalStyles.fonts.secondary};
 `;
 
