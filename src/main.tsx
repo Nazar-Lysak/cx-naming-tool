@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client';
 import App from './App.tsx';
 import ErrorBoundary from '@/client/components/error-boundary/ErrorBoundary';
 import { AppProvider } from '@/client/context/context';
+import { FiltersProvider } from '@/client/context/filtersContext';
 
 export interface WidgetConfig {
   id?: string | null;
@@ -46,7 +47,9 @@ createRoot(rootElement).render(
   <StrictMode>
     <ErrorBoundary>
       <AppProvider>
-        <App config={config} />
+        <FiltersProvider>
+          <App config={config} />
+        </FiltersProvider>
       </AppProvider>
     </ErrorBoundary>
   </StrictMode>
