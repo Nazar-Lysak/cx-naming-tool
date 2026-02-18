@@ -1,15 +1,20 @@
 import type { WidgetConfig } from '../main';
 import FilterComponent from './features/filter/FilterComponent';
 import ViewComponent from './features/view/ViewComponent';
+import { motion } from 'motion/react';
 
 function MainApp(config: WidgetConfig) {
   console.log(config);
 
   return (
-    <div className="main-app">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5, ease: 'easeIn' }}
+    >
       <FilterComponent />
       <ViewComponent />
-    </div>
+    </motion.div>
   );
 }
 

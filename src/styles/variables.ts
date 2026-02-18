@@ -12,7 +12,7 @@ export const generalStyles = {
     secondary: 'Arial, sans-serif',
   },
   mediaQuery: {
-    mobileS: '(max-width: 480px)',
+    mobileS: '(max-width: 568px)',
     mobile: '(max-width: 768px)',
     tablet: '(max-width: 1024px)',
     desktop: '(min-width: 1025px)',

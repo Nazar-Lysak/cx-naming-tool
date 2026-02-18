@@ -1,5 +1,7 @@
+import { useApp } from '@/client/context/context';
 import { nameList } from '@/data/nameList';
 import { generalStyles } from '@/styles/variables';
+import { useMemo } from 'react';
 import styled from 'styled-components';
 
 const Container = styled.div`
@@ -25,6 +27,7 @@ const NameCard = styled.button`
   background-color: ${generalStyles.colors.lightGray};
   font-family: ${generalStyles.fonts.primary};
   color: ${generalStyles.colors.darkGray};
+  font-size: 20px;
   box-shadow:
     rgba(58, 53, 51, 0.1) 0px 2px 12px 0px,
     rgba(58, 53, 51, 0.2) 0px 0px 2px 0px;
@@ -41,13 +44,35 @@ const NameCard = styled.button`
     background-color: ${generalStyles.colors.darkGray};
     color: ${generalStyles.colors.white};
   }
+
+  &.nt-active {
+    background-color: ${generalStyles.colors.red};
+    color: ${generalStyles.colors.white};
+  }
 `;
 
 const ViewComponent = () => {
+  const { nameId, setNameId } = useApp();
+
+  const memoizedNames = useMemo(() => {
+    console.log('Memoized value');
+    return nameList;
+  }, []);
+
+  const handleActiveClass = (id: string): string => {
+    return id === nameId ? 'nt-active' : '';
+  };
+
   return (
     <Container>
-      {nameList.map((name) => (
-        <NameCard key={name.id}>{name.title}</NameCard>
+      {memoizedNames.map((name) => (
+        <NameCard
+          className={handleActiveClass(name.id)}
+          key={name.id}
+          onClick={() => setNameId(name.id)}
+        >
+          {name.title}
+        </NameCard>
       ))}
     </Container>
   );

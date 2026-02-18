@@ -2,9 +2,9 @@ import { createContext, useState, useContext, type ReactNode } from 'react';
 
 interface AppContextType {
   isStarted: boolean;
-  nameId: number;
+  nameId: string;
   setIsStarted: (value: boolean) => void;
-  setNameId: (value: number) => void;
+  setNameId: (value: string) => void;
 }
 
 const AppContext = createContext<AppContextType | undefined>(undefined);
@@ -15,7 +15,7 @@ interface AppProviderProps {
 
 export const AppProvider = ({ children }: AppProviderProps) => {
   const [isStarted, setIsStarted] = useState<boolean>(false);
-  const [nameId, setNameId] = useState<number>(0);
+  const [nameId, setNameId] = useState<string>('');
 
   const value: AppContextType = {
     isStarted,
