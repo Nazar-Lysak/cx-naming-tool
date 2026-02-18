@@ -108,7 +108,7 @@ const NamePopover = ({
       const category = categoryList.find(
         (cat) => cat.id === categoryRef.target_id
       );
-      return category?.title || 'Unknown';
+      return category?.title || textData.nameDetails.categoryUnknownLabel;
     });
 
     return categoryNames.join(', ');

@@ -19,5 +19,6 @@ export const textData = {
   nameDetails: {
     categoryPluralLabel: 'Categories',
     categorySingularLabel: 'Category',
+    categoryUnknownLabel: 'Unknown',
   },
 };
