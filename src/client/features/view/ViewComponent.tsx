@@ -115,7 +115,14 @@ const ViewComponent = () => {
 
   useEffect(() => {
     resetNamesCount();
-  }, [selectedLetter, selectedGender, selectedCategory, resetNamesCount]);
+    setNameId('');
+  }, [
+    selectedLetter,
+    selectedGender,
+    selectedCategory,
+    resetNamesCount,
+    setNameId,
+  ]);
 
   useEffect(() => {
     const updateInterval = () => {
