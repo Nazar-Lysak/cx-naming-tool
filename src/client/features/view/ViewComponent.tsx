@@ -120,15 +120,22 @@ const ViewComponent = () => {
     return id === nameId ? 'nt-active' : '';
   };
 
-  const activeNameIndex = memoizedNames.findIndex((name) => name.id === nameId);
-  const popoverPosition =
-    activeNameIndex >= 0
-      ? Math.ceil((activeNameIndex + 1) / popoverInterval) * popoverInterval - 1
-      : -1;
-  const activeName =
-    activeNameIndex >= 0 ? memoizedNames[activeNameIndex] : null;
-  const activePositionInRow =
-    activeNameIndex >= 0 ? activeNameIndex % popoverInterval : 0;
+  const popoverData = useMemo(() => {
+    const activeIndex = memoizedNames.findIndex((name) => name.id === nameId);
+    
+    if (activeIndex < 0) {
+      return { position: -1, name: null, columnIndex: 0 };
+    }
+
+    const activeRowStartIndex = Math.floor(activeIndex / popoverInterval) * popoverInterval;
+    const rowEndIndex = activeRowStartIndex + popoverInterval - 1;
+    
+    return {
+      position: Math.min(rowEndIndex, memoizedNames.length - 1),
+      name: memoizedNames[activeIndex],
+      columnIndex: activeIndex % popoverInterval,
+    };
+  }, [nameId, memoizedNames, popoverInterval]);
 
   return (
     <>
@@ -147,10 +154,10 @@ const ViewComponent = () => {
               >
                 {name.title}
               </NameCard>
-              {index === popoverPosition && activeName && (
+              {index === popoverData.position && popoverData.name && (
                 <NamePopover
-                  name={activeName}
-                  activeColumnIndex={activePositionInRow}
+                  name={popoverData.name}
+                  activeColumnIndex={popoverData.columnIndex}
                   totalColumns={popoverInterval}
                 />
               )}
