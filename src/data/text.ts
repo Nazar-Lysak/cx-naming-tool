@@ -1,6 +1,7 @@
 export const textData = {
   buttons: {
     start: 'Start',
+    clean: 'Clean Filters',
   },
 
   startScreen: {
@@ -33,5 +34,9 @@ export const textData = {
     male: 'Male',
     female: 'Female',
     any: 'Any',
+  },
+
+  noResults: {
+    title: 'Sorry, we found no results.',
   },
 };

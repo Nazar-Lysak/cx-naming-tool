@@ -1,10 +1,12 @@
 import NamePopover from '@/client/components/name-popover/NamePopover';
+import NoResult from '@/client/components/no-result/Noresult';
 import { useApp } from '@/client/context/context';
 import { useFilters } from '@/client/context/filtersContext';
 import { nameList } from '@/data/nameList';
 import { deviceSizes, generalStyles } from '@/styles/variables';
 import { Fragment, useEffect, useMemo, useState } from 'react';
 import styled from 'styled-components';
+import { AnimatePresence, motion } from 'motion/react';
 
 const Container = styled.div`
   display: grid;
@@ -25,7 +27,7 @@ const Container = styled.div`
   }
 `;
 
-const NameCard = styled.button`
+const NameCard = styled(motion.button)`
   background-color: ${generalStyles.colors.lightGray};
   font-family: ${generalStyles.fonts.primary};
   color: ${generalStyles.colors.darkGray};
@@ -58,10 +60,18 @@ const ViewComponent = () => {
   const { selectedLetter, selectedGender, selectedCategory } = useFilters();
   const [popoverInterval, setPopoverInterval] = useState<number>(5);
 
-  console.log(selectedLetter, selectedGender, selectedCategory)
+  console.log(selectedLetter, selectedGender, selectedCategory);
 
   const memoizedNames = useMemo(() => {
-    return nameList;
+    return nameList.filter((name) => {
+      const matchesCategory = selectedCategory
+        ? name.categories.some(
+            (category) => category.target_id === selectedCategory
+          )
+        : true;
+
+      return matchesCategory;
+    });
   }, [selectedLetter, selectedGender, selectedCategory]);
 
   useEffect(() => {
@@ -110,25 +120,37 @@ const ViewComponent = () => {
     activeNameIndex >= 0 ? activeNameIndex % popoverInterval : 0;
 
   return (
-    <Container>
-      {memoizedNames.map((name, index) => (
-        <Fragment key={name.id}>
-          <NameCard
-            className={handleActiveClass(name.id)}
-            onClick={() => handleNameClick(name.id)}
-          >
-            {name.title}
-          </NameCard>
-          {index === popoverPosition && activeName && (
-            <NamePopover
-              name={activeName}
-              activeColumnIndex={activePositionInRow}
-              totalColumns={popoverInterval}
-            />
-          )}
-        </Fragment>
-      ))}
-    </Container>
+    <>
+      <Container>
+        <AnimatePresence mode="popLayout">
+          {memoizedNames.map((name, index) => (
+            <Fragment key={name.id}>
+              <NameCard
+                layout
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.8 }}
+                transition={{ duration: 0.3 }}
+                className={handleActiveClass(name.id)}
+                onClick={() => handleNameClick(name.id)}
+              >
+                {name.title}
+              </NameCard>
+              {index === popoverPosition && activeName && (
+                <NamePopover
+                  name={activeName}
+                  activeColumnIndex={activePositionInRow}
+                  totalColumns={popoverInterval}
+                />
+              )}
+            </Fragment>
+          ))}
+        </AnimatePresence>
+      </Container>
+      <AnimatePresence>
+        {memoizedNames.length === 0 && <NoResult />}
+      </AnimatePresence>
+    </>
   );
 };
 
