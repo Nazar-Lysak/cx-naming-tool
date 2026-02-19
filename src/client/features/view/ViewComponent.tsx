@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { useApp } from '@/client/context/context';
 import { useFilters } from '@/client/context/filtersContext';
 import NamePopover from '@/client/components/name-popover/NamePopover';
-import NoResult from '@/client/components/no-result/Noresult';
+import NoResult from '@/client/components/no-result/NoResult';
 import { nameList } from '@/data/nameList';
 import { textData } from '@/data/text';
 import { deviceSizes, generalStyles } from '@/styles/variables';
