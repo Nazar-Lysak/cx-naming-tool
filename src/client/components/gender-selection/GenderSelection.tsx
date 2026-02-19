@@ -10,15 +10,25 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   margin-left: auto;
+
+  @media ${generalStyles.mediaQuery.mobile} {
+    width: 100%;
+    align-items: center;
+    margin: 18px auto 24px;
+  }
 `;
 
 const GenderLabel = styled.p`
-  margin: 0 0 12px 0;
+  margin: 0 0 12px;
   font-family: ${generalStyles.fonts.primary};
   font-size: 16px;
   font-weight: 300;
-  line-height: 24px;
+  line-height: 1.5;
   color: ${generalStyles.colors.darkGray};
+
+  @media ${generalStyles.mediaQuery.mobile} {
+    display: none;
+  }
 `;
 
 const RadioGroup = styled.div`
@@ -64,7 +74,7 @@ const Label = styled.label`
   cursor: pointer;
   font-family: ${generalStyles.fonts.primary};
   font-size: 16px;
-  line-height: 24px;
+  line-height: 1.5;
   color: ${generalStyles.colors.darkGray};
   user-select: none;
 

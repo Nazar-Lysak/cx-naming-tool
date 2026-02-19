@@ -56,7 +56,7 @@ const Title = styled.h2`
   margin: 0 0 16px 0;
   font-size: 60px;
   font-weight: 400;
-  line-height: 66px;
+  line-height: 1.1;
   font-family: ${generalStyles.fonts.primary};
   color: ${generalStyles.colors.darkGray};
 `;
@@ -65,7 +65,7 @@ const Category = styled.p`
   margin: 0 0 16px 0;
   font-size: 16px;
   font-weight: 400;
-  line-height: 24px;
+  line-height: 1.5;
   font-family: ${generalStyles.fonts.primary};
   color: ${generalStyles.colors.gray};
 `;
@@ -77,7 +77,7 @@ const Definition = styled.div`
   border-bottom: 1px dashed ${generalStyles.colors.beige};
   font-family: ${generalStyles.fonts.primary};
   font-size: 20px;
-  line-height: 32px;
+  line-height: 1.6;
   color: ${generalStyles.colors.gray};
 
   a {

@@ -4,7 +4,7 @@ import type { WidgetConfig } from './main';
 import StartScreen from '@/client/components/start-screen/StartScreen';
 import LoadingOverlay from '@/client/UI/loading-overlay/LoadingOverlay';
 import { useApp } from '@/client/context/context';
-import { deviceSizes } from './styles/variables';
+import { deviceSizes, generalStyles } from './styles/variables';
 
 const MainApp = lazy(() => import('@/client/MainApp'));
 
@@ -14,6 +14,8 @@ const AppContainer = styled.div`
   margin: 0 auto;
   padding: 16px;
   min-height: 200px;
+  background-color: ${generalStyles.colors.lightGray};
+  border-radius: 8px;
 
   * {
     box-sizing: border-box;

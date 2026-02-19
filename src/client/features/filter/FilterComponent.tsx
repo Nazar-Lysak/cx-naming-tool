@@ -1,6 +1,7 @@
 import AlphabetSelector from '@/client/components/alphabet-selector/AlphabetSelector';
 import GenderSelection from '@/client/components/gender-selection/GenderSelection';
 import SwiperFilters from '@/client/components/swiper-filter/SwiperFilters';
+import { textData } from '@/data/text';
 import { generalStyles } from '@/styles/variables';
 import styled from 'styled-components';
 
@@ -10,12 +11,12 @@ const Title = styled.h3`
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
-  line-height: 32px;
+  line-height: 1.6;
   margin-bottom: 8px;
 
   @media ${generalStyles.mediaQuery.mobile} {
     font-size: 16px;
-    line-height: 24px;
+    line-height: 1.5;
     margin-bottom: 16px;
   }
 `;
@@ -39,7 +40,7 @@ const Container = styled.div`
 const FilterComponent = () => {
   return (
     <div>
-      <Title>Find the perfect name</Title>
+      <Title>{textData.swiper.title}</Title>
       <Container>
         <SwiperFilters />
         <GenderSelection />

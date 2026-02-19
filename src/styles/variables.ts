@@ -18,6 +18,7 @@ export const generalStyles = {
     darkGray: '#2b2b2b',
     gray: '#6b6868',
     lightGray: '#f8f9fa',
+    mediumGray: '#c9c5b9',
 
     // Accents
     light: '#fff5f5',

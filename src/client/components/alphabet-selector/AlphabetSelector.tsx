@@ -13,7 +13,7 @@ const Container = styled.div`
     rgba(58, 53, 51, 0.2) 0px 0px 2px,
     rgba(58, 53, 51, 0.1) 0px 2px 12px;
   border-radius: 100px;
-  margin: 0px auto;
+  margin: 28px auto 0;
   padding: 16px;
   overflow: auto;
 `;
@@ -33,7 +33,7 @@ const LetterButton = styled.button<{ $isActive: boolean }>`
   font-family: interregular;
   font-size: 25px;
   font-weight: 400;
-  line-height: 37px;
+  line-height: 1.5;
   text-align: center;
   cursor: pointer;
   transition: all 0.3s ease;

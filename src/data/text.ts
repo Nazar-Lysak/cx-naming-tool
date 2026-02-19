@@ -22,6 +22,12 @@ export const textData = {
     categoryUnknownLabel: 'Unknown',
   },
 
+  swiper: {
+    title: 'Find the perfect name',
+    a11yPrevious: 'Previous category',
+    a11yNext: 'Next category',
+  },
+
   genderFilters: {
     label: 'Gender',
     male: 'Male',
