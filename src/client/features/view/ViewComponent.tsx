@@ -152,7 +152,8 @@ const ViewComponent = () => {
   }, []);
 
   const handleNameClick = (id: string): void => {
-    return nameId === id ? setNameId('') : setNameId(id);
+    const isSameName = id === nameId;
+    setNameId(isSameName ? '' : id);
   };
 
   const handleActiveClass = (id: string): string => {
