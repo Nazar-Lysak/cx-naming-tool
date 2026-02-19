@@ -1,5 +1,6 @@
 import NamePopover from '@/client/components/name-popover/NamePopover';
 import { useApp } from '@/client/context/context';
+import { useFilters } from '@/client/context/filtersContext';
 import { nameList } from '@/data/nameList';
 import { deviceSizes, generalStyles } from '@/styles/variables';
 import { Fragment, useEffect, useMemo, useState } from 'react';
@@ -54,12 +55,14 @@ const NameCard = styled.button`
 
 const ViewComponent = () => {
   const { nameId, setNameId } = useApp();
+  const { selectedLetter, selectedGender, selectedCategory } = useFilters();
   const [popoverInterval, setPopoverInterval] = useState<number>(5);
 
+  console.log(selectedLetter, selectedGender, selectedCategory)
+
   const memoizedNames = useMemo(() => {
-    console.log('Memoized names recalculated');
     return nameList;
-  }, []);
+  }, [selectedLetter, selectedGender, selectedCategory]);
 
   useEffect(() => {
     const updateInterval = () => {
