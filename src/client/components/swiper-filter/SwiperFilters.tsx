@@ -12,14 +12,45 @@ import CategoryItem from '@/client/UI/category-item/CategoryItem';
 const Container = styled.div`
   grid-area: swiper;
   max-width: 100%;
-  padding: 0 40px;
 
   .swiper {
     padding: 0 40px;
+
+    &:after,
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 60px;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    &:before {
+      left: 0;
+      background: linear-gradient(
+        to right,
+        ${generalStyles.colors.lightGray} 0%,
+        ${generalStyles.colors.lightGray} 50%,
+        transparent 100%
+      );
+    }
+
+    &:after {
+      right: 0;
+      background: linear-gradient(
+        to left,
+        ${generalStyles.colors.lightGray} 0%,
+        ${generalStyles.colors.lightGray} 30%,
+        transparent 100%
+      );
+    }
   }
 
   .swiper-button-next,
   .swiper-button-prev {
+    z-index: 4;
     color: ${generalStyles.colors.red};
     width: 32px;
     height: 32px;

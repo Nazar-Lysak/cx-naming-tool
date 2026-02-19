@@ -28,6 +28,7 @@ const CategoryPicture = styled.picture`
   width: 48px;
   height: 48px;
   pointer-events: none;
+  margin: 0px 18px 8px;
 
   @media ${generalStyles.mediaQuery.mobile} {
     width: 24px;
