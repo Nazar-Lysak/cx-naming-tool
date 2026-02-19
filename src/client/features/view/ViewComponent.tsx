@@ -4,7 +4,7 @@ import { useApp } from '@/client/context/context';
 import { useFilters } from '@/client/context/filtersContext';
 import { nameList } from '@/data/nameList';
 import { deviceSizes, generalStyles } from '@/styles/variables';
-import { Fragment, useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import styled from 'styled-components';
 import { AnimatePresence, motion } from 'motion/react';
 
@@ -25,6 +25,10 @@ const Container = styled.div`
   @media ${generalStyles.mediaQuery.mobileS} {
     grid-template-columns: repeat(1, minmax(0px, 1fr));
   }
+`;
+
+const ItemWrapper = styled(motion.div)`
+  display: contents;
 `;
 
 const NameCard = styled(motion.button)`
@@ -124,7 +128,7 @@ const ViewComponent = () => {
       <Container>
         <AnimatePresence mode="popLayout">
           {memoizedNames.map((name, index) => (
-            <Fragment key={name.id}>
+            <ItemWrapper key={name.id}>
               <NameCard
                 layout
                 initial={{ opacity: 0, scale: 0.8 }}
@@ -143,7 +147,7 @@ const ViewComponent = () => {
                   totalColumns={popoverInterval}
                 />
               )}
-            </Fragment>
+            </ItemWrapper>
           ))}
         </AnimatePresence>
       </Container>
