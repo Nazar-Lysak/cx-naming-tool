@@ -1,8 +1,10 @@
+import { useCallback, useMemo } from 'react';
 import styled from 'styled-components';
 
 import { useFilters } from '@/client/context/filtersContext';
 import ButtonLetter from '@/client/UI/button-letter/ButtonLetter';
 import { alphabetLetters } from '@/data/alphabet';
+import { nameList } from '@/data/nameList';
 import { generalStyles } from '@/styles/variables';
 
 const Container = styled.div`
@@ -25,20 +27,47 @@ const Container = styled.div`
 `;
 
 const AlphabetSelector = () => {
-  const { selectedLetter, setSelectedLetter } = useFilters();
+  const {
+    selectedLetter,
+    setSelectedLetter,
+    selectedGender,
+    selectedCategory,
+  } = useFilters();
 
-  const handleLetterClick = (letter: string) => {
-    setSelectedLetter(selectedLetter === letter ? '' : letter);
-  };
+  const availableLetters = useMemo(() => {
+    return nameList.reduce<Set<string>>((acc, name) => {
+      const matchesCategory = selectedCategory
+        ? name.categories.some((cat) => cat.target_id === selectedCategory)
+        : true;
+      const matchesGender = selectedGender
+        ? name.gender === selectedGender
+        : true;
+
+      if (matchesCategory && matchesGender) {
+        acc.add(name.title[0]);
+      }
+
+      return acc;
+    }, new Set());
+  }, [selectedGender, selectedCategory]);
+
+  const handleLetterClick = useCallback(
+    (letter: string) => {
+      if (!availableLetters.has(letter)) return;
+      setSelectedLetter(selectedLetter === letter ? '' : letter);
+    },
+    [availableLetters, selectedLetter, setSelectedLetter]
+  );
 
   return (
-    <Container>
+    <Container role="navigation" aria-label="Alphabet filter">
       {alphabetLetters.map((letter) => (
         <ButtonLetter
           key={letter}
           letter={letter}
           selectedLetter={selectedLetter}
           handleLetterClick={handleLetterClick}
+          disabled={!availableLetters.has(letter)}
         />
       ))}
     </Container>
