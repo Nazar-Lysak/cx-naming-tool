@@ -1,11 +1,6 @@
 const NoRessultsIcon = () => {
   return (
-    <svg
-      viewBox="0 0 48 77"
-      focusable="false"
-      width={48}
-      height={77}
-    >
+    <svg viewBox="0 0 48 77" focusable="false" width={48} height={77}>
       <svg
         width="48"
         height="77"

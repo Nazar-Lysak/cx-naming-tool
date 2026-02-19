@@ -33,7 +33,7 @@ export const textData = {
     label: 'Gender',
     male: 'Male',
     female: 'Female',
-    any: 'Any',
+    both: 'Both',
   },
 
   noResults: {

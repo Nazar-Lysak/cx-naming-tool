@@ -93,37 +93,30 @@ const Label = styled.label`
   }
 `;
 
-type GenderValue = 'male' | 'female' | 'any';
-
-interface GenderOption {
-  readonly value: GenderValue;
-  readonly label: string;
-}
-
-const genderOptions: readonly GenderOption[] = [
-  { value: 'male', label: textData.genderFilters.male },
-  { value: 'female', label: textData.genderFilters.female },
-  { value: 'any', label: textData.genderFilters.any },
+const genderOptions = [
+  textData.genderFilters.male,
+  textData.genderFilters.female,
+  textData.genderFilters.both,
 ] as const;
 
 const GenderSelection = () => {
-  const { selectedGender, setSelectedGender } = useFilters();
+  const { selectedGender, handleSelectGender } = useFilters();
 
   return (
     <Container>
       <GenderLabel>{textData.genderFilters.label}</GenderLabel>
       <RadioGroup role="radiogroup" aria-label={textData.genderFilters.label}>
         {genderOptions.map((option) => (
-          <Label key={option.value}>
+          <Label key={option}>
             <HiddenRadio
               name="gender"
-              value={option.value}
-              checked={selectedGender === option.value}
-              onChange={() => setSelectedGender(option.value)}
-              aria-label={option.label}
+              value={option}
+              checked={selectedGender === option}
+              onChange={() => handleSelectGender(option)}
+              aria-label={option}
             />
             <CustomRadio aria-hidden="true" />
-            {option.label}
+            {option}
           </Label>
         ))}
       </RadioGroup>

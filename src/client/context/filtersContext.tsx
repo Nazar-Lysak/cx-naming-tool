@@ -5,8 +5,8 @@ interface FiltersContextType {
   selectedGender: string;
   selectedCategory: string;
   setSelectedLetter: (value: string) => void;
-  setSelectedGender: (value: string) => void;
-  setSelectedCategory: (value: string) => void;
+  handleSelectGender: (gender: string) => void;
+  handleSelectCategory: (categoryId: string) => void;
   resetFilters: () => void;
 }
 
@@ -21,6 +21,16 @@ export const FiltersProvider = ({ children }: FiltersProviderProps) => {
   const [selectedGender, setSelectedGender] = useState<string>('');
   const [selectedCategory, setSelectedCategory] = useState<string>('');
 
+  const handleSelectCategory = (categoryId: string): void => {
+    setSelectedCategory((prev) => (prev === categoryId ? '' : categoryId));
+    setSelectedLetter('');
+  };
+
+  const handleSelectGender = (gender: string): void => {
+    setSelectedGender((prev) => (prev === gender ? '' : gender));
+    setSelectedLetter('');
+  };
+
   const resetFilters = (): void => {
     setSelectedLetter('');
     setSelectedGender('');
@@ -32,8 +42,8 @@ export const FiltersProvider = ({ children }: FiltersProviderProps) => {
     selectedGender,
     selectedCategory,
     setSelectedLetter,
-    setSelectedGender,
-    setSelectedCategory,
+    handleSelectGender,
+    handleSelectCategory,
     resetFilters,
   };
 

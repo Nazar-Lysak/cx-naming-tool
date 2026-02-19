@@ -56,20 +56,20 @@ const NoResult = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0, transition: { duration: 0 } }}
-      transition={{ 
+      transition={{
         duration: 0.3,
-        delay: 0.4
+        delay: 0.4,
       }}
     >
       <IconWrapper
         initial={{ scale: 0, rotate: -180 }}
         animate={{ scale: 1, rotate: 0 }}
-        transition={{ 
-          duration: 0.5, 
+        transition={{
+          duration: 0.5,
           delay: 0.5,
           type: 'spring',
           stiffness: 200,
-          damping: 15
+          damping: 15,
         }}
       >
         <NoRessultsIcon />

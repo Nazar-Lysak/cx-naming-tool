@@ -74,8 +74,14 @@ const ViewComponent = () => {
             (category) => category.target_id === selectedCategory
           )
         : true;
+      const matchesLetter = selectedLetter
+        ? name.title.startsWith(selectedLetter)
+        : true;
+      const matchesGender = selectedGender
+        ? name.gender === selectedGender
+        : true;
 
-      return matchesCategory;
+      return matchesCategory && matchesLetter && matchesGender;
     });
   }, [selectedLetter, selectedGender, selectedCategory]);
 

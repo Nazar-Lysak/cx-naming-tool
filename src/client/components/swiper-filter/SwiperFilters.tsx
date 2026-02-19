@@ -71,10 +71,10 @@ const CategoryCard = styled(SwiperSlide)`
 `;
 
 const SwiperFilters = () => {
-  const { selectedCategory, setSelectedCategory } = useFilters();
+  const { selectedCategory, handleSelectCategory } = useFilters();
 
   const handleCategoryClick = (categoryId: string) => {
-    setSelectedCategory(selectedCategory === categoryId ? '' : categoryId);
+    handleSelectCategory(selectedCategory === categoryId ? '' : categoryId);
   };
 
   const handleKeyDown = (e: React.KeyboardEvent, categoryId: string) => {
