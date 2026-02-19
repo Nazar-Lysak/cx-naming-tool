@@ -1,9 +1,10 @@
+import { motion } from 'motion/react';
+import styled from 'styled-components';
+
+import { useFilters } from '@/client/context/filtersContext';
 import NoRessultsIcon from '@/assets/icons/NoResultsIcon';
 import { textData } from '@/data/text';
 import { generalStyles } from '@/styles/variables';
-import styled from 'styled-components';
-import { motion } from 'motion/react';
-import { useFilters } from '@/client/context/filtersContext';
 
 const Container = styled(motion.div)`
   display: flex;

@@ -1,7 +1,8 @@
+import styled from 'styled-components';
+
 import { useFilters } from '@/client/context/filtersContext';
 import { textData } from '@/data/text';
 import { generalStyles } from '@/styles/variables';
-import styled from 'styled-components';
 
 const Container = styled.div`
   grid-area: gender;

@@ -1,12 +1,13 @@
-import NamePopover from '@/client/components/name-popover/NamePopover';
-import NoResult from '@/client/components/no-result/Noresult';
+import { useEffect, useMemo, useState } from 'react';
+import { AnimatePresence, motion } from 'motion/react';
+import styled from 'styled-components';
+
 import { useApp } from '@/client/context/context';
 import { useFilters } from '@/client/context/filtersContext';
+import NamePopover from '@/client/components/name-popover/NamePopover';
+import NoResult from '@/client/components/no-result/Noresult';
 import { nameList } from '@/data/nameList';
 import { deviceSizes, generalStyles } from '@/styles/variables';
-import { useEffect, useMemo, useState } from 'react';
-import styled from 'styled-components';
-import { AnimatePresence, motion } from 'motion/react';
 
 const Container = styled.div`
   display: grid;

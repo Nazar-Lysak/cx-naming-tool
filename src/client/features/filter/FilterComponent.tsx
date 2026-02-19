@@ -1,9 +1,10 @@
+import styled from 'styled-components';
+
 import AlphabetSelector from '@/client/components/alphabet-selector/AlphabetSelector';
 import GenderSelection from '@/client/components/gender-selection/GenderSelection';
 import SwiperFilters from '@/client/components/swiper-filter/SwiperFilters';
 import { textData } from '@/data/text';
 import { generalStyles } from '@/styles/variables';
-import styled from 'styled-components';
 
 const Title = styled.h3`
   color: ${generalStyles.colors.darkGray};

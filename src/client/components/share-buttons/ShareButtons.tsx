@@ -1,14 +1,15 @@
-import styled from 'styled-components';
 import {
   FacebookShareButton,
   WhatsappShareButton,
   TwitterShareButton,
 } from 'react-share';
-import SocialIconFacebook from '@/assets/icons/SocialIconFacebook';
-import { generalStyles } from '@/styles/variables';
-import SocialIconWhatsApp from '@/assets/icons/SocialIconWhatsApp';
-import SocialIconTwitter from '@/assets/icons/SocialIconTwitter';
+import styled from 'styled-components';
+
 import CopyIcon from '@/assets/icons/CopyIcon';
+import SocialIconFacebook from '@/assets/icons/SocialIconFacebook';
+import SocialIconTwitter from '@/assets/icons/SocialIconTwitter';
+import SocialIconWhatsApp from '@/assets/icons/SocialIconWhatsApp';
+import { generalStyles } from '@/styles/variables';
 
 const Container = styled.div`
   margin-top: 20px;

@@ -1,7 +1,8 @@
 import React, { Component, type ReactNode } from 'react';
 import styled from 'styled-components';
-import { generalStyles } from '@/styles/variables';
+
 import { textData } from '@/data/text';
+import { generalStyles } from '@/styles/variables';
 
 const ErrorContainer = styled.div`
   display: flex;

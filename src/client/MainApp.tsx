@@ -1,7 +1,8 @@
+import { motion } from 'motion/react';
+
 import type { WidgetConfig } from '../main';
 import FilterComponent from './features/filter/FilterComponent';
 import ViewComponent from './features/view/ViewComponent';
-import { motion } from 'motion/react';
 
 function MainApp(config: WidgetConfig) {
   console.log(config);

@@ -1,5 +1,6 @@
-import styled from 'styled-components';
 import { motion } from 'motion/react';
+import styled from 'styled-components';
+
 import viteLogo from '../../../assets/loading-red.png';
 
 const Overlay = styled(motion.div)`

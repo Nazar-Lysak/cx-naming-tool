@@ -1,5 +1,6 @@
-import { generalStyles } from '@/styles/variables';
 import styled from 'styled-components';
+
+import { generalStyles } from '@/styles/variables';
 
 const LetterButton = styled.button<{ $isActive: boolean }>`
   width: 37px;

@@ -1,13 +1,14 @@
-import { useFilters } from '@/client/context/filtersContext';
-import { categoryList } from '@/data/categoryList';
-import { generalStyles, deviceSizes } from '@/styles/variables';
+import styled from 'styled-components';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, A11y } from 'swiper/modules';
-import styled from 'styled-components';
 import 'swiper/swiper-bundle.css';
+
 import type { PetNameCategory } from '@/client/types/types';
-import { textData } from '@/data/text';
+import { useFilters } from '@/client/context/filtersContext';
 import CategoryItem from '@/client/UI/category-item/CategoryItem';
+import { categoryList } from '@/data/categoryList';
+import { textData } from '@/data/text';
+import { generalStyles, deviceSizes } from '@/styles/variables';
 
 const Container = styled.div`
   grid-area: swiper;

@@ -1,13 +1,14 @@
-import type { PetName, PetNameCategoryRef } from '@/client/types/types';
-import { generalStyles } from '@/styles/variables';
-import { motion } from 'motion/react';
 import parse from 'html-react-parser';
+import { motion } from 'motion/react';
 import styled from 'styled-components';
-import CloseIcon from '@/assets/icons/CloseIcon';
+
+import type { PetName, PetNameCategoryRef } from '@/client/types/types';
 import { useApp } from '@/client/context/context';
-import { textData } from '@/data/text';
 import ShareButtons from '../share-buttons/ShareButtons';
+import CloseIcon from '@/assets/icons/CloseIcon';
 import { categoryList } from '@/data/categoryList';
+import { textData } from '@/data/text';
+import { generalStyles } from '@/styles/variables';
 
 interface NamePopoverProps {
   name: PetName;
