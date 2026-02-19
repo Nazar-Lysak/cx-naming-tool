@@ -2,6 +2,7 @@ export const textData = {
   buttons: {
     start: 'Start',
     clean: 'Clean Filters',
+    loadMore: 'Load More Names',
   },
 
   startScreen: {

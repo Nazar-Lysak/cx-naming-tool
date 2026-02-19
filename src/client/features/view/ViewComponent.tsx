@@ -7,6 +7,7 @@ import { useFilters } from '@/client/context/filtersContext';
 import NamePopover from '@/client/components/name-popover/NamePopover';
 import NoResult from '@/client/components/no-result/Noresult';
 import { nameList } from '@/data/nameList';
+import { textData } from '@/data/text';
 import { deviceSizes, generalStyles } from '@/styles/variables';
 
 const Container = styled.div`
@@ -60,8 +61,35 @@ const NameCard = styled(motion.button)`
   }
 `;
 
+const LoadMoreButton = styled(motion.button)`
+  width: 100%;
+  max-width: 300px;
+  margin: 32px auto 0;
+  padding: 16px 32px;
+  background-color: ${generalStyles.colors.red};
+  color: ${generalStyles.colors.white};
+  font-family: ${generalStyles.fonts.primary};
+  font-size: 18px;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: block;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: ${generalStyles.colors.darkGray};
+  }
+`;
+
 const ViewComponent = () => {
-  const { nameId, setNameId } = useApp();
+  const {
+    nameId,
+    setNameId,
+    visibleNamesCount,
+    loadMoreNames,
+    resetNamesCount,
+  } = useApp();
   const { selectedLetter, selectedGender, selectedCategory } = useFilters();
   const [popoverInterval, setPopoverInterval] = useState<number>(5);
 
@@ -84,6 +112,10 @@ const ViewComponent = () => {
       return matchesCategory && matchesLetter && matchesGender;
     });
   }, [selectedLetter, selectedGender, selectedCategory]);
+
+  useEffect(() => {
+    resetNamesCount();
+  }, [selectedLetter, selectedGender, selectedCategory, resetNamesCount]);
 
   useEffect(() => {
     const updateInterval = () => {
@@ -122,14 +154,15 @@ const ViewComponent = () => {
 
   const popoverData = useMemo(() => {
     const activeIndex = memoizedNames.findIndex((name) => name.id === nameId);
-    
+
     if (activeIndex < 0) {
       return { position: -1, name: null, columnIndex: 0 };
     }
 
-    const activeRowStartIndex = Math.floor(activeIndex / popoverInterval) * popoverInterval;
+    const activeRowStartIndex =
+      Math.floor(activeIndex / popoverInterval) * popoverInterval;
     const rowEndIndex = activeRowStartIndex + popoverInterval - 1;
-    
+
     return {
       position: Math.min(rowEndIndex, memoizedNames.length - 1),
       name: memoizedNames[activeIndex],
@@ -137,11 +170,14 @@ const ViewComponent = () => {
     };
   }, [nameId, memoizedNames, popoverInterval]);
 
+  const displayedNames = memoizedNames.slice(0, visibleNamesCount);
+  const hasMoreNames = memoizedNames.length > visibleNamesCount;
+
   return (
     <>
       <Container>
         <AnimatePresence mode="popLayout">
-          {memoizedNames.map((name, index) => (
+          {displayedNames.map((name, index) => (
             <ItemWrapper key={name.id}>
               <NameCard
                 layout
@@ -165,6 +201,20 @@ const ViewComponent = () => {
           ))}
         </AnimatePresence>
       </Container>
+      <AnimatePresence mode="wait">
+        {hasMoreNames && (
+          <LoadMoreButton
+            key={`load-more-${selectedLetter}-${selectedGender}-${selectedCategory}-${nameId}`}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, transition: { duration: 0 } }}
+            transition={{ duration: 0.4, delay: 0.7 }}
+            onClick={loadMoreNames}
+          >
+            {textData.buttons.loadMore}
+          </LoadMoreButton>
+        )}
+      </AnimatePresence>
       <AnimatePresence>
         {memoizedNames.length === 0 && <NoResult />}
       </AnimatePresence>

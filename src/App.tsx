@@ -20,6 +20,7 @@ const AppContainer = styled.div`
 
   * {
     box-sizing: border-box;
+    user-select: none;
   }
 `;
 
