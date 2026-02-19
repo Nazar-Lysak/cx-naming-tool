@@ -125,9 +125,8 @@ const NamePopover = ({
       animate={{
         opacity: 1,
         transform: 'translateY(0px)',
-        transition: { opacity: { delay: 0.1 } },
       }}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 0.5, delay: 0.3, ease: 'easeOut' }}
     >
       <Arrow $position={arrowPosition} />
       <CloseButton onClick={() => setNameId('')}>

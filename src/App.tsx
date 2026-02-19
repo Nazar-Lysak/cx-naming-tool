@@ -1,9 +1,10 @@
 import { lazy, Suspense } from 'react';
 import styled from 'styled-components';
+
 import type { WidgetConfig } from './main';
+import { useApp } from '@/client/context/context';
 import StartScreen from '@/client/components/start-screen/StartScreen';
 import LoadingOverlay from '@/client/UI/loading-overlay/LoadingOverlay';
-import { useApp } from '@/client/context/context';
 import { deviceSizes, generalStyles } from './styles/variables';
 
 const MainApp = lazy(() => import('@/client/MainApp'));
