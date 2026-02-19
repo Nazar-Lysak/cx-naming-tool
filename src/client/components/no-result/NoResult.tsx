@@ -3,6 +3,7 @@ import { textData } from '@/data/text';
 import { generalStyles } from '@/styles/variables';
 import styled from 'styled-components';
 import { motion } from 'motion/react';
+import { useFilters } from '@/client/context/filtersContext';
 
 const Container = styled(motion.div)`
   display: flex;
@@ -47,6 +48,8 @@ const CleanButton = styled(motion.button)`
 `;
 
 const NoResult = () => {
+  const { resetFilters } = useFilters();
+
   return (
     <Container
       initial={{ opacity: 0 }}
@@ -83,6 +86,7 @@ const NoResult = () => {
         transition={{ duration: 0.3, delay: 0.9 }}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
+        onClick={resetFilters}
       >
         {textData.buttons.clean}
       </CleanButton>

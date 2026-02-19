@@ -7,6 +7,7 @@ interface FiltersContextType {
   setSelectedLetter: (value: string) => void;
   setSelectedGender: (value: string) => void;
   setSelectedCategory: (value: string) => void;
+  resetFilters: () => void;
 }
 
 const FiltersContext = createContext<FiltersContextType | undefined>(undefined);
@@ -20,6 +21,12 @@ export const FiltersProvider = ({ children }: FiltersProviderProps) => {
   const [selectedGender, setSelectedGender] = useState<string>('');
   const [selectedCategory, setSelectedCategory] = useState<string>('');
 
+  const resetFilters = (): void => {
+    setSelectedLetter('');
+    setSelectedGender('');
+    setSelectedCategory('');
+  };
+
   const value: FiltersContextType = {
     selectedLetter,
     selectedGender,
@@ -27,6 +34,7 @@ export const FiltersProvider = ({ children }: FiltersProviderProps) => {
     setSelectedLetter,
     setSelectedGender,
     setSelectedCategory,
+    resetFilters,
   };
 
   return (
